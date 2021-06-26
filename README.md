@@ -1,4 +1,4 @@
-# TakeAHike_TeamProject2
+# Take A Hike
 
 ## Table of Contents
 ​
