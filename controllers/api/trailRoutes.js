@@ -9,7 +9,7 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newTrail);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Trail.destroy({
+    const trailData = await Trail.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -29,7 +29,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(trailData);
   } catch (err) {
     res.status(500).json(err);
   }
