@@ -45,4 +45,4 @@ User.init(
     }
 );
 
-module.exports = Trail;
+module.exports = Trail_Category;
