@@ -5,6 +5,7 @@ const Trail_Category = require('./Trail_Category');
 // User has many Trail
 User.belongsToMany(Trail, {
     foreignKey: 'trails_id',
+    onDelete: 'CASCADE',
     through: {
         model: User,
         unique: false
@@ -12,14 +13,14 @@ User.belongsToMany(Trail, {
     as: 'user_trail'
 });
 
-Trail.belongsToMany(User, {
-    foreignKey: 'trails_id',
-    through: {
-        model: User,
-        unique: false
-    },
-    as: 'trail_user'
-});
+// Trail.belongsToMany(User, {
+//     foreignKey: 'trails_id',
+//     through: {
+//         model: User,
+//         unique: false
+//     },
+//     as: 'trail_user'
+// });
 
 // Trail.hasMany(User, {
 //     foreignKey: 'trails_id',

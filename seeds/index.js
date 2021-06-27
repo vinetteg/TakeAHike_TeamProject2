@@ -9,18 +9,16 @@ const seedDatabase = async () => {
    try {
     await sequelize.sync({ force: true });
     // await seedTrailCategory();
-    // await seedTrail();
+    await seedTrail();
     await seedUser();
     
-    const user = await User.bulkCreate(userData, {
-        individualHooks: true,
-        return: true,
-    });
+    // const user = await User.bulkCreate(userData, {
+    //     individualHooks: true,
+    //     return: true,
+    // });
    } catch (error) {
        console.log(error)
    }
-   
-    
 
     process.exit(0);
 
