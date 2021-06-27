@@ -1,5 +1,4 @@
 const sequelize = require('../config/connection');
-// const { User, Trail, Trail_Category } = require('../models');
 
 const seedUser = require('./user-seed.js');
 const seedTrail = require('./trail-seed.js');
@@ -22,9 +21,6 @@ const seedDatabase = async () => {
    } catch (error) {
        console.log(error)
    }
-
-    
-
-    }
+}
 
 seedDatabase();
