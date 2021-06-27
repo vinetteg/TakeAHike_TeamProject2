@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Trail_Category Extends Model {}
+class Trail_Category extends Model {}
 
-User.init(
+Trail_Category.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -28,20 +27,13 @@ User.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'trail',
-                key: 'id',
-            },
-        },
+    },
     {
-        sequelize,
+         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'trail_category',
-        }
     }
 );
 
