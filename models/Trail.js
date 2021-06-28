@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Trail Extends Model {}
+class Trail extends Model {}
 
-User.init(
+Trail.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,8 +15,9 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        description: {
+        location: {
            type: DataTypes.STRING,
+           allowNull: false,
         },
         image_source: {
             type: DataTypes.STRING,
@@ -26,26 +26,26 @@ User.init(
         date_been_there: {
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
         },
-        needed_funding: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
+        category: {
+            type: DataTypes.STRING,
+            allownull: false,
         },
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'trail_category',
-                key: 'id',
-            },
+        season: {
+            type: DataTypes.STRING,
+            allownull: false,
         },
+        difficulty: {
+            type: DataTypes.STRING,
+            allownull: false
+        },
+    },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Trail',
-        }
+        modelName: 'trail'
     }
 );
 
