@@ -1,7 +1,37 @@
 const router = require('express').Router();
-const { Trail } = require('../../models');
+const { Trail, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+// GET all hike
+router.get('/', async (req, res) => {
+  try {
+    const trailData = await Trail.findAll();
+    res.status(200).json(trailData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET a single hike
+router.get('/:id', async (req, res) => {
+  try {
+    const trailData = await Trail.findByPk(req.params.id, {
+    
+    });
+
+    if (!trailData) {
+      res.status(404).json({ message: 'No hike found' });
+      return;
+    }
+
+    res.status(200).json(trailData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// CREATE a hike
 router.post('/', withAuth, async (req, res) => {
   try {
     const newTrail = await Trail.create({
@@ -15,6 +45,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// DELETE a hike
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const trailData = await Trail.destroy({
