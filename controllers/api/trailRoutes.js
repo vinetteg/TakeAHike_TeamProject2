@@ -6,11 +6,7 @@ const withAuth = require('../../utils/auth');
 // GET all hike
 router.get('/', async (req, res) => {
   try {
-    const trailData = await Trail.findAll(
-      {
-        include: [{ model: User}]
-      }
-    );
+    const trailData = await Trail.findAll();
     res.status(200).json(trailData);
 
   } catch (err) {
@@ -23,7 +19,6 @@ router.get('/:id', async (req, res) => {
   try {
     console.log(' Try to Find One Hike by ID');
     const trailData = await Trail.findByPk(req.params.id, {
-    
     });
 
     if (!trailData) {
@@ -42,7 +37,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newTrail = await Trail.create({
       ...req.body,
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
     });
 
     res.status(200).json(newTrail);
