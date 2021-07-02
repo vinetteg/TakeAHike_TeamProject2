@@ -1,6 +1,6 @@
 const User = require('./User');
 const Trail = require('./Trail');
-
+const UserTrail = require('./UserTrail')
 
 // User has many Trail
 User.belongsTo(Trail, {
@@ -14,4 +14,4 @@ Trail.hasMany(User, {
 })
 
 
-module.exports = { User, Trail }
+module.exports = { User, Trail, UserTrail }

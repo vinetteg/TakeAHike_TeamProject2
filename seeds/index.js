@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 
 const seedUser = require('./user-seed.js');
 const seedTrail = require('./trail-seed.js');
-const seedTrailCategory = require('./trail-category-seed.js');
+const seedUserTrail = require('./user-trail-seed.js');
 
 const seedDatabase = async () => {
    try {
@@ -11,8 +11,13 @@ const seedDatabase = async () => {
     // await seedTrailCategory();
     await seedTrail();
     console.log('\n----- TRAIL SEEDED -----\n');
+
     await seedUser();
     console.log('\n----- USER SEEDED -----\n');
+
+    await seedUserTrail();
+    console.log('\n----- USER TRAIL SEEDED -----\n');
+    
     // const user = await User.bulkCreate(userData, {
     //     individualHooks: true,
     //     return: true,

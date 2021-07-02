@@ -19,6 +19,10 @@ Trail.init(
            type: DataTypes.STRING,
            allowNull: false,
         },
+        zipcode: {
+            type: DataTypes.STRING,
+            allowNull: false,
+         },
         image_source: {
             type: DataTypes.STRING,
             allowNull: false,
