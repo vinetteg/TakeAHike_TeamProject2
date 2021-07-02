@@ -1,6 +1,19 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// GET all hike
+router.get('/', async (req, res) => {
+  try {
+    console.log(' Try to Find All Hikes');
+    const userData = await User.findAll();
+    res.status(200).json(userData);
+    console.log('FindAll Hike');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
