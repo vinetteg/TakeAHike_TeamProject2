@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Take_A_Hike</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -273,15 +274,14 @@
 </header>
 
 <main>
-  {{{ body }}}
 
 
 
   <div class="container">
     <div class="row">
-      <div class="col">  <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
+      <div class="col">  <div class="card-body text-center">
+        <div class="card-header bg-info text-white">
+          <ul class="nav nav-tabs card-header-tabs bg-info text-white">
             <li class="nav-item">
               <a class="nav-link active" href="#">Hike</a>
             </li>
@@ -296,14 +296,14 @@
               <img src="images/200x200.gif" alt="hikeimageplaceholder">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body-winter">
                 <h5 class="card-title">{{{Hike Name}}}</h5>
                 <p class="card-text">{{{Hike description}}}</p>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Current weather: {{{hike weather}}}</li>
                   <li class="list-group-item">Difficulty: {{{ hike difficulty}}}</li>
                   <li class="list-group-item">View type: {{{type of view}}}</li>
-                  <li class="list-group-item">Best season to hike: Winter</li>
+                  <li class="list-group-item">Best season to hike: ❄️ Winter</li>
                   <li class="list-group-item"><form class="form-inline">
                     <div class="form-group mb-2">
                       <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
@@ -317,8 +317,8 @@
         </div>
       </div></div>
       <div class="col">  <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
+        <div class="card-header bg-success text-white">
+          <ul class="nav nav-tabs card-header-tabs bg-success text-white">
             <li class="nav-item">
               <a class="nav-link active" href="#">Hike</a>
             </li>
@@ -340,7 +340,7 @@
                   <li class="list-group-item">Current weather: {{{hike weather}}}</li>
                   <li class="list-group-item">Difficulty: {{{ hike difficulty}}}</li>
                   <li class="list-group-item">View type: {{{type of view}}}</li>
-                  <li class="list-group-item">Best season to hike: Spring</li>
+                  <li class="list-group-item">Best season to hike:🌻 Spring</li>
                   <li class="list-group-item"><form class="form-inline">
                     <div class="form-group mb-2">
                       <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
@@ -355,8 +355,8 @@
       </div></div>
       <div class="w-100"></div>
       <div class="col">  <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
+        <div class="card-header bg-warning text-dark">
+          <ul class="nav nav-tabs card-header-tabs bg-warning text-dark">
             <li class="nav-item">
               <a class="nav-link active" href="#">Hike</a>
             </li>
@@ -378,7 +378,7 @@
                   <li class="list-group-item">Current weather: {{{hike weather}}}</li>
                   <li class="list-group-item">Difficulty: {{{ hike difficulty}}}</li>
                   <li class="list-group-item">View type: {{{type of view}}}</li>
-                  <li class="list-group-item">Best season to hike: Summer</li>
+                  <li class="list-group-item">Best season to hike:🌞 Summer</li>
                   <li class="list-group-item"><form class="form-inline">
                     <div class="form-group mb-2">
                       <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
@@ -392,8 +392,8 @@
         </div>
       </div></div>
       <div class="col">  <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
+        <div class="card-header bg-danger text-white">
+          <ul class="nav nav-tabs card-header-tabs bg-danger text-white">
             <li class="nav-item">
               <a class="nav-link active" href="#">Hike</a>
             </li>
@@ -415,7 +415,7 @@
                   <li class="list-group-item">Current weather: {{{hike weather}}}</li>
                   <li class="list-group-item">Difficulty: {{{ hike difficulty}}}</li>
                   <li class="list-group-item">View type: {{{type of view}}}</li>
-                  <li class="list-group-item">Best season to hike: Fall</li>
+                  <li class="list-group-item">Best season to hike:🍁 Fall</li>
                   <li class="list-group-item"><form class="form-inline">
                     <div class="form-group mb-2">
                       <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
