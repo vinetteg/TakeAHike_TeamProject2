@@ -1,19 +1,27 @@
 async function signupFormHandler(event) {
     event.preventDefault();
 
-    const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const name = document.querySelector('#name-signup').value.trim();
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+    const date_created = today;
+    const access_level = 1;
 
-    if (username && email && password && name) {
+    if (email && password && name) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
           username,
-          email,
           name,
-          password
+          email,
+          password,
+          access_level,
+          date_created
         }),
         headers: { 'Content-Type': 'application/json' }
       });

@@ -3,7 +3,7 @@ async function commentFormHandler(event) {
 
     const comment_text = document.querySelector(".comment-textarea").value.trim();
 
-    const post_id = window.location.toString().split('/')[
+    const trails_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
 
@@ -11,7 +11,7 @@ async function commentFormHandler(event) {
         const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
-            post_id,
+            trails_id,
             comment_text
           }),
           headers: {
