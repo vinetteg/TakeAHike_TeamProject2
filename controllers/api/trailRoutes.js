@@ -1,15 +1,18 @@
 const router = require('express').Router();
 const { Trail } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 // GET all hike
 router.get('/', async (req, res) => {
   try {
-    console.log(' Try to Find All Hikes');
-    const trailData = await Trail.findAll();
+    const trailData = await Trail.findAll(
+      {
+        include: [{ model: User}]
+      }
+    );
     res.status(200).json(trailData);
-    console.log('FindAll Hike');
+
   } catch (err) {
     res.status(500).json(err);
   }
