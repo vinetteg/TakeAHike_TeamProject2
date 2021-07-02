@@ -16,3 +16,6 @@
     });
   }, false);
 })();
+
+
+<img alt='${name of hike' src='${}'

@@ -25,7 +25,7 @@ Trail.init(
         },
         date_been_there: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
         category: {
             type: DataTypes.STRING,
