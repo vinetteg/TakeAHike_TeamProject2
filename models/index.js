@@ -13,14 +13,14 @@ User.belongsToMany(Trail, {
     as: 'user_trail'
 });
 
-// Trail.belongsToMany(User, {
-//     foreignKey: 'trails_id',
-//     through: {
-//         model: User,
-//         unique: false
-//     },
-//     as: 'trail_user'
-// });
+Trail.belongsToMany(User, {
+    foreignKey: 'trails_id',
+    through: {
+        model: User,
+        unique: false
+    },
+    as: 'trail_user'
+});
 
 // Trail.hasMany(User, {
 //     foreignKey: 'trails_id',
