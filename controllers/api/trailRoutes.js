@@ -1,13 +1,18 @@
 const router = require('express').Router();
-const { Trail, User } = require('../../models');
+const { Trail } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 // GET all hike
 router.get('/', async (req, res) => {
   try {
-    const trailData = await Trail.findAll();
+    const trailData = await Trail.findAll(
+      {
+        include: [{ model: User}]
+      }
+    );
     res.status(200).json(trailData);
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -16,6 +21,7 @@ router.get('/', async (req, res) => {
 // GET a single hike
 router.get('/:id', async (req, res) => {
   try {
+    console.log(' Try to Find One Hike by ID');
     const trailData = await Trail.findByPk(req.params.id, {
     
     });
@@ -24,7 +30,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No hike found' });
       return;
     }
-
+    console.log('Find One Hike by ID');
     res.status(200).json(trailData);
   } catch (err) {
     res.status(500).json(err);
