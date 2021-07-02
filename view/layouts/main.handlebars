@@ -45,29 +45,29 @@
 
 
 
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation new-post-form" novalidate>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <input type="text" class="form-control" id="validationCustom01" placeholder="Title" required>
+              <input type="text" class="form-control post-title" id="validationCustom01" placeholder="Title" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
 
             <div class="form-group col-md-12 mb-3">
-              <textarea class="form-control" id="validationCustom02" rows="10" placeholder="Your hiking story starts here..." required></textarea>
+              <textarea class="form-control post-content" id="validationCustom02" rows="10" placeholder="Your hiking story starts here..." required></textarea>
             </div>
 
             <div class="form-group mb-3">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="privateCheckBox" value="option1">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="privateCheckBox" value="1">
                 <label class="form-check-label" for="exampleRadios1">
                   For me only
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="publicCheckBox" value="option2" checked>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="publicCheckBox" value="2" checked>
                 <label class="form-check-label" for="exampleRadios2">
                   Public
                 </label>
@@ -76,29 +76,25 @@
 
             <div class="col-md-4 mb-3">
               <label for="validationCustom03">Date of adventure</label>
-              <input type="date" class="form-control" id="validationCustom02" placeholder="Last name" required>
+              <input type="date" class="form-control date_of_hike" id="validationCustom02" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
-            <div class="col-md-6 mb-3">
 
-              <label for="validationCustomUsername">Tags</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">#</span>
-                </div>
-                <input type="text" class="form-control" id="validationCustomUsername" placeholder="#summer," aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  Please provide at least one tag.
-                </div>
-              </div>
+            <div class="col-md-6 mb-3 add_a_hike_tags">
+            <label for="tags">Tags</label>
+            {{#each tags as |tag|}}
+             {{> tag-info tag}}
+              {{/each}}
             </div>
-          </div>
+
+
+
           <div class="form-row">
             <div class="col-md-3 mb-3">
-              <label for="validationCustom05">Zip of your hike</label>
-              <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+              <label for="validationCustom05">Zip of your hike (5 digits)</label>
+              <input type="text" class="form-control zip_of_hike" id="validationCustom05" placeholder="Zip" required>
               <div class="invalid-feedback">
                 Please provide a valid zip of your hike.
               </div>
@@ -153,35 +149,35 @@
                           </div>
 
                           <div class="modal-body">
-                            <form class="rounded">
+                            <form class="rounded signup-form">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="">First and last name</span>
                                     </div>
-                                    <input type="text" class="form-control">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control firstName-signup">
+                                    <input type="text" class="form-control lastName-signup">
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1">Email</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="example@example.com" aria-label="Username" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control email-signup" placeholder="example@example.com" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
 
-                                <select class="form-select mb-3" multiple aria-label="multiple select example">
+                                <select class="form-select mb-3 season-signup" multiple aria-label="multiple select example">
                                     <option selected>Select your favorite season</option>
-                                        <option value="1">❄️ Winter</option>
-                                        <option value="2">🌻 Spring</option>
-                                        <option value="3">🌞 Summer</option>
-                                        <option value="4">🍁 Fall</option>
+                                        <option value="winter">❄️ Winter</option>
+                                        <option value="spring">🌻 Spring</option>
+                                        <option value="summer">🌞 Summer</option>
+                                        <option value="fall">🍁 Fall</option>
                                   </select>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend col">
                                       <label class="input-group-text" for="inputGroupSelect01">Select your favorite view</label>
                                     </div>
-                                    <select class="custom-select col" id="inputGroupSelect01">
+                                    <select class="custom-select col view-signup" id="inputGroupSelect01">
                                       <option selected>Choose...</option>
                                       <option value="1">Beach</option>
                                       <option value="2">Mountain</option>
@@ -193,25 +189,25 @@
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="username" aria-label="new_username" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control username-signup" placeholder="username" aria-label="new_username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                       <button class="btn btn-outline-secondary btn_validation" type="button">validate</button>
                                     </div>
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="password" aria-label="new_password" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control password-first" placeholder="password" aria-label="new_password" aria-describedby="basic-addon2">
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="re-type password" aria-label="confirm_password" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control password-signup" placeholder="re-type password" aria-label="confirm_password" aria-describedby="basic-addon2">
                                 </div>
 
                             </form>
                           </div>
 
                           <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-primary col-6 btn_finalsignup" data-bs-dismiss="modal">Sign up</button>
+                            <button type="submit" class="btn btn-primary col-6 btn_finalsignup" data-bs-dismiss="modal">Sign up</button>
                           </div>
 
                         </div>
@@ -228,16 +224,16 @@
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                          <span class="input-group-text login_username" id="inputGroup-sizing-default">Username</span>
+                          <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control login_username" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                          <span class="input-group-text login_password" id="inputGroup-sizing-default">Password</span>
+                          <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control login_password" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                     </div>
                   </form>
                 </div>
