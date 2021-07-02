@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trail, User } = require('../../models');
+const { Trail } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
