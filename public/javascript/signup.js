@@ -1,26 +1,25 @@
 async function signupFormHandler(event) {
     event.preventDefault();
-
-    const first_name = document.querySelector("#firstName-signup").value.trim();
-    const last_name = document.querySelector("#lastName-signup").value.trim();
+  
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
-    const season = document.querySelector('#season-signup').value();
-    const view = document.querySelector('view-signup').value()
     const password = document.querySelector('#password-signup').value.trim();
-
-
+    const twitter = document.querySelector('#twitter-signup').value.trim();
+    const github = document.querySelector('#github-signup').value.trim();
+  
     if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
           username,
           email,
+          twitter,
+          github,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-
+  
       // check the response status
       if (response.ok) {
         console.log('success');
@@ -30,5 +29,5 @@ async function signupFormHandler(event) {
       }
     }
 }
-
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+  
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

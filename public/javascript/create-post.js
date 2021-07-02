@@ -1,13 +1,8 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector("#post-title").value;
-    const post_content = document.querySelector("#post-content").value;
-    const private_post = document.querySelector(".privateCheckBox").value;
-    const public_post = document.querySelector(".publicCheckBox").value;
-    const date_of_hike = document.querySelector("#date_of_hike").value;
-    const zip_of_hike = document.querySelector("#zip_of_hike").value;
-    const tags = [];
+    const title = document.querySelector('input[name="post-title"]').value;
+    const post_content = document.querySelector('input[name="post-content"]').value;
 
     const response = await fetch(`/api/posts`, {
       method: 'POST',
