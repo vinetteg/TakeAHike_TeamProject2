@@ -45,25 +45,36 @@
     <main>
         <div class="column">
             <h2 class="title pb-4">create new account:</h2><hr>
-            <form class="signup-form">
+            <form class="signup-form needs-validation" novalidate>
 
               <div>
                 <label for="name-signup">name:</label>
-                <input type="text" id="name-signup" />
+                <input type="text" id="name-signup" class="form-control" required/>
               </div>
 
               <div>
                 <label for="email-signup">email:</label>
-                <input type="text" id="email-signup" />
+                <input type="text" id="email-signup" class="form-control" required />
               </div>
 
               <div>
                 <label for="password-signup">password:</label>
-                <input type="password" id="password-signup" />
+                <input type="password" id="password-signup" class="form-control" required/>
               </div>
 
+
+              <!-- <input type="password" placeholder="Password" id="password" required> -->
               <div>
-                <button type="submit" class="button is-primary">signup</button>
+              <label for="password-signup">confrim password:</label>
+              <input type="password" placeholder="Confirm Password" id="confirm_password" class="form-control" required>
+              <div class="invalid-feedback">
+                password does not match!!!
+              </div>
+            </div>
+
+
+              <div>
+                <button type="submit" class="button is-primary pure-button pure-button-primary">signup</button>
               </div>
 
             </form>
