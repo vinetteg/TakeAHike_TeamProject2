@@ -20,6 +20,26 @@ Take a Hike is an application that hikers can create a profile and add hikes the
 
 Create a hiker profile so hikers can track hikes they have taken and hikes they want to take in the future. They can also view comments that other hikers have made about the hikes.
 
+- Take a hike
+
+## Table of Contents
+  - [About the Project](#about-the-project)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credit](#credit)
+  - [License](#license)
+
+
+## About the Project 
+ - 
+
+
+## Installation
+
+## Usage 
+
+
 ## Credit
 
 ## License
+

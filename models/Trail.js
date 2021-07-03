@@ -19,13 +19,17 @@ Trail.init(
            type: DataTypes.STRING,
            allowNull: false,
         },
+        zipcode: {
+            type: DataTypes.STRING,
+            allowNull: false,
+         },
         image_source: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         date_been_there: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
         },
         category: {
             type: DataTypes.STRING,
