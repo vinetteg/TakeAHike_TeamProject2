@@ -21,38 +21,34 @@
             </div>
 
               <div>
-                <label for="season">season:</label>
-                  <form>
-                    <input type="radio" id="summer" name="summer" value="summer">
-                        <label for="summer"> summer</label><br>
-                    <input type="radio" id="spring" name="spring" value="spring">
-                        <label for="spring"> spring</label><br>
-                    <input type="radio" id="winter" name="winter" value="winter">
-                        <label for="winter"> winter</label>
-                    <input type="radio" id="autumn" name="autumn" value="autumn">
-                        <label for="autumn"> autumn</label>
-                    </form>
-             </div>
+              <select class="post-season" aria-label="season select">
+                <option value="all season" selected>Select the season</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="autumn">Autumn</option>
+                <option value="winter">Winter</option>
+              </select>
+           </div>
 
+            <div>
               <div>
-              <label for="post-difficulty">difficulty level:</label>
-              <form class="post-difficulty">
-                <input type="radio" id="easy" name="post-difficulty" value="easy">
-                  <label for="easy">easy</label><br>
-                <input type="radio" id="moderate" name="post-difficulty" value="moderate">
-                  <label for="moderate">moderate</label><br>
-                <input type="radio" id="difficult" name="post-difficulty" value="difficult">
-                  <label for="difficult">difficult</label>
-              </form>
-            </div>
+                <select class="post-difficulty" aria-label="level select">
+                  <option value="n/a" selected>Select the difficulty level</option>
+                  <option value="family-friendly">family-friendly</option>
+                  <option value="moderate">moderate</option>
+                  <option value="hard">hard</option>
+                  <option value="professional">professional</option>
+                </select>
+             </div>
+          </div>
 
             <div>
               <label for="post-category">tags:</label>
               <input class="post-category" id="post-category" name="post-category" placeholder="insert hiking content here"/>
             </div>
 
-            <button type="submit" class="">create post</button>
           </form>
+          <button type="submit" class="submit_btn" onclick="newFormHandler()">create post</button>
 </section>
 
 <script src="/javascript/add-hike.js"></script>
