@@ -43,10 +43,24 @@
             </div>
           </nav>
     <main>
-        {{{ body }}}
+        <div class="">
+            <a href="/dashboard/create/"><button id="create-post" class="">create post</button></a>
+
+            <h2 class="title">dashboard: your posts</h2><hr>
+            {{#if posts.length}}
+                <div>
+                {{#each posts as |post|}}
+                    {{> post-info post}}
+                {{/each}}
+                </div>
+            {{else}}
+            <h3 class="">you do not have any post yet</h3>
+
+            {{/if}}
+
     </main>
 
-        {{!-- <footer class="footer rows pb-2">
+        <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
             <a href="/">homepage</a>{{#if loggedIn}} |
@@ -57,7 +71,7 @@
             {{/if}}
             </p>
         </div>
-        </footer> --}}
+        </footer>
 
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>

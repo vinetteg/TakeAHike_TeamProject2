@@ -1,5 +1,5 @@
 <!-- displaying articles -->
-{{> post-info post}}
+{{> post-info trail}}
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -15,8 +15,8 @@
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> comments trail.comments}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="../public/javascript/comment.js"></script>
 {{/if}}

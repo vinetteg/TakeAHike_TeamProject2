@@ -66,7 +66,150 @@
       </div>
     </nav>
     <main>
-<<<<<<< HEAD
+<!--
+      <div class="container">
+        <div class="row">
+
+
+
+      <div class="col">
+        <div class="card-body text-center">
+
+        <div class="card-header bg-info text-white">
+          <ul class="nav nav-tabs card-header-tabs bg-info text-white">
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Hike</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">See Comments</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+
+            <div class="col-md-4">
+              <img src="images/200x200.gif" alt="hikeimageplaceholder">
+            </div>
+
+            <div class="col-md-8">
+              <div class="card-body-winter">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{location}}</p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Current weather: {{{hike weather}}}</li>
+                  <li class="list-group-item">Difficulty: {{difficulty}}</li>
+                  <li class="list-group-item">Category: {{category}}</li>
+                  <li class="list-group-item">Best season to hike: {{season}}</li>
+                  <li class="list-group-item">
+
+                    <form class="form-inline">
+                    <div class="form-group mb-2">
+                      <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
+                    </div>
+                    <button type="submit" class="btn btn-info mb-2">Add Comment</button>
+                  </form></li>
+
+                </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    </div>
+    </div> -->
+    <section>
+      <h2 class="title">create new hiking post</h2><hr>
+      <form class="needs-validation add-hike-form" novalidate>
+        <div>
+          <label for="post-name">title:</label>
+          <input class="input form-control post-title mb-3" type="text" id="post-title" name="post-title" placeholder="e.g. Mail Box Peak" required/>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div>
+          <label for="post-location">location:</label>
+          <input type="text" class="form-control  post-location mb-3" id="post-location" name="post-location" placeholder="e.g. North Bend" required/>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+          <div>
+          <label for="post-zip">zip:</label>
+          <input class="post-zip mb-3 form-control " type="text" id="post-zip" name="post-zip" placeholder="e.g. 99203" required/>
+          <div class="invalid-feedback">
+            Zip code needs to be 5 digits!
+          </div>
+        </div>
+
+          <div>
+          <label for="post-date">hiking date:</label>
+          <input type="date" class="post-date mb-3 form-control " id="post-date" name="post-date" required/>
+          <div class="invalid-feedback">
+            Don't forget the date!
+          </div>
+        </div>
+
+        <div>
+          <select class="mb-3 form-select post-season form-control" multiple aria-label="season select" required>
+            <option value="all season" selected>Select the season</option>
+            <option value="spring">🌺 Spring</option>
+            <option value="summer">🌞 Summer</option>
+            <option value="autumn">🍁 Autumn</option>
+            <option value="winter">☃️ Winter</option>
+          </select>
+       </div>
+
+        <div>
+          <div>
+            <select class="mb-3 form-select post-difficulty form-control" aria-label="level select" required>
+              <option value="n/a" selected>Select the difficulty level</option>
+              <option value="family-friendly">family-friendly</option>
+              <option value="moderate">moderate</option>
+              <option value="hard">hard</option>
+              <option value="professional">professional</option>
+            </select>
+         </div>
+      </div>
+
+      <table id="tblFruits">
+        <tr>
+            <td><input id="chkmountain" type="checkbox" value="mountain"/><label for="chkmountain">Mountain</label></td>
+        </tr>
+        <tr>
+            <td><input id="chk360" type="checkbox" value="360 view"/><label for="chk360">360 View</label></td>
+        </tr>
+        <tr>
+            <td><input id="chkLake" type="checkbox" value="lake"/><label for="chkLake">Lake</label></td>
+        </tr>
+        <tr>
+            <td><input id="chkBeach" type="checkbox" value="beach"/><label for="chkBeach">Beach</label></td>
+        </tr>
+        <tr>
+            <td><input id="chkCanyon" type="checkbox" value="canyon"/><label for="chkCanyon">Canyon</label></td>
+        </tr>
+        <tr>
+          <td><input id="chkYourOwn" type="text" placeholder="create your own tag"/><label for="chkYourOwn"></label></td>
+      </tr>
+    </table>
+    <br />
+    <button type="submit" class="submit create_btn" >create post</button>
+      </form>
+
+</section>
+  </main>
       {{{body}}}
 
       <div class="column">
@@ -108,26 +251,46 @@
           </div>
         </form>
       </div>
-=======
-        {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea class="ml-5" name="comment-body"></textarea>
-  </div>
+      {{#if loggedIn}}
+      <form class="comment-form">
+        <div>
+          <textarea class="ml-5" name="comment-body"></textarea>
+        </div>
 
-  <div>
-    <button class="button is-warning ml-5 mb-5" type="submit">add comment</button>
-  </div>
+        <div>
+          <button class="button is-warning ml-5 mb-5" type="submit">
+            add comment
+          </button>
+        </div>
+      </form>
+      {{/if}} {{> comments post.comments}} {{#if loggedIn}}
+      <script src="/javascript/comment.js"></script>
+      {{/if}}
 
-</form>
-{{/if}}
+      <div class="column">
+        <h2 class="title pb-4">Create A New Account:</h2>
+        <hr />
+        <form class="signup-form">
+          <div>
+            <label for="name-signup">Name:</label>
+            <input type="text" id="name-signup" />
+          </div>
 
-{{> comments post.comments}}
+          <div>
+            <label for="email-signup">Email:</label>
+            <input type="text" id="email-signup" />
+          </div>
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
->>>>>>> c0b0e6de7365ee8c46eb77581125a70b877cc412
+          <div>
+            <label for="password-signup">Password:</label>
+            <input type="text" id="password-signup" />
+          </div>
+
+          <div>
+            <button type="submit" class="button is-primary">Signup</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- <footer class="footer rows pb-2">
