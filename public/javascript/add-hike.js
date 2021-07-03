@@ -4,7 +4,7 @@ async function newFormHandler(event) {
     const name = document.querySelector("#post-title").value;
     const location = document.querySelector("#post-location").value
     const zip = document.querySelector("#post-zip").value
-    const data_been_there = document.querySelector("#post-date").value
+    const date_been_there = document.querySelector("#post-date").value
     let season = document.querySelector(".post-season").value;
     let difficulty = document.querySelector(".post-difficulty").value
      var category = new Array();
@@ -26,7 +26,7 @@ async function newFormHandler(event) {
         name,
         location,
         zip,
-        data_been_there,
+        date_been_there,
         category,
         season,
         difficulty
@@ -57,8 +57,8 @@ async function newFormHandler(event) {
                     event.stopPropagation();
                   }
                   form.classList.add('was-validated');
-                  //rex();
-                  newFormHandler(event)
+                  rex();
+                  // newFormHandler(event)
                 }, false);
               });
             }, false);
@@ -88,7 +88,7 @@ async function newFormHandler(event) {
     const name = document.querySelector("#post-title").value;
     const location = document.querySelector("#post-location").value
     const zip = document.querySelector("#post-zip").value
-    const data_been_there = document.querySelector("#post-date").value
+    const date_been_there = document.querySelector("#post-date").value
     let season = document.querySelector(".post-season").value;
     let difficulty = document.querySelector(".post-difficulty").value
      var category = new Array();
@@ -104,11 +104,11 @@ async function newFormHandler(event) {
         category.push(createYourOwn)
       }
 
-      if (name && location && zip && data_been_there && season && difficulty) {
+      if (name && location && zip && date_been_there && season && difficulty) {
         console.log(name);
         console.log(location);
         console.log(zip);
-        console.log(data_been_there);
+        console.log(date_been_there);
         console.log(season);
         console.log(difficulty);
         console.log(category);
