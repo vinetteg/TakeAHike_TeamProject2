@@ -73,6 +73,13 @@ main {
 }
 
 .password-signup {
-  margin: 0 auto;
   padding: 10px;
+}
+
+header.card-header {
+  background-color: var(--winter);
+}
+
+.trail-name {
+  font-weight: bold;
 }

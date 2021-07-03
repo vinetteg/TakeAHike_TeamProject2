@@ -66,7 +66,6 @@
       </div>
     </nav>
     <main>
-<<<<<<< HEAD
       {{{body}}}
 
       <div class="column">
@@ -108,26 +107,21 @@
           </div>
         </form>
       </div>
-=======
-        {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea class="ml-5" name="comment-body"></textarea>
-  </div>
+      {{#if loggedIn}}
+      <form class="comment-form">
+        <div>
+          <textarea class="ml-5" name="comment-body"></textarea>
+        </div>
 
-  <div>
-    <button class="button is-warning ml-5 mb-5" type="submit">add comment</button>
-  </div>
-
-</form>
-{{/if}}
-
-{{> comments post.comments}}
-
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
->>>>>>> c0b0e6de7365ee8c46eb77581125a70b877cc412
+        <div>
+          <button class="button is-warning ml-5 mb-5" type="submit">
+            add comment
+          </button>
+        </div>
+      </form>
+      {{/if}} {{> comments post.comments}} {{#if loggedIn}}
+      <script src="/javascript/comment.js"></script>
+      {{/if}}
     </main>
 
     <!-- <footer class="footer rows pb-2">
