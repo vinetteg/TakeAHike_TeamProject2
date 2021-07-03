@@ -23,6 +23,7 @@ div {
 
 label {
   font-weight: bold;
+  text-align: center;
 }
 
 button {
@@ -102,7 +103,7 @@ button {
   text-align: right;
 }
 
-.inputwrap label {
+.inputwrap.label {
   display: inline-block;
   width: 100px;
   text-align: right;
