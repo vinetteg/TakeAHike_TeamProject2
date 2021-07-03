@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trail } = require('../../models');
+const { Trail, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -33,10 +33,10 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a hike
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newTrail = await Trail.create({
-      ...req.body,
+      ...req.body
       // user_id: req.session.user_id,
     });
 
@@ -46,13 +46,32 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+
+// UPDATE TRAIL BY VALUE
+router.put('/:id', async (req, res) => {
+  // update a category by its `id` value
+  try {
+    const updateTrail = await Trail.update(req.body, {
+       where: {
+         id: req.params.id,
+       },
+      });
+      
+    if (!updateTrail[0]) {
+      res.status(404).json({message: 'No Trail with this id! '})
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // DELETE a hike
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const trailData = await Trail.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        // user_id: req.session.user_id,
       },
     });
 
