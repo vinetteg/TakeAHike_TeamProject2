@@ -19,6 +19,34 @@
     </div>
   </form>
 </div>
+            <h2 class="title pb-4">Please log in</h2>
+            <hr />
+            <form class="login-form needs-validation" novalidate >
+              <div>
+                <label for="email-login">Email:</label>
+                <input type="text" id="email-login" class="form-control" required/>
+                <div class="invalid-feedback">
+                  please enter the registered email!
+                </div>
+              </div>
+              <div>
+                <label for="password-login">Password:</label>
+                <input type="password" id="password-login" class="form-control"  required />
+                <input type="checkbox" onclick="myFunction()">Show Password
+                <div class="invalid-feedback">
+                  password can not be empty!
+                </div>
+              </div>
 
+              <div>
+                <button type="submit" class="button-login">Login</button>
+                <a href="/signup"><button
+                    type="button"
+                    class="button is-danger"
+                  >Signup</button></a>
+              </div>
+            </div>
+
+            </form>
 <!-- javascript file-->
 <script src="../public/javascript/login.js"></script>
