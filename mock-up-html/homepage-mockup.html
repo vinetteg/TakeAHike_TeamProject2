@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Take A Hike</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+
+                {{#if loggedIn}}
+                <li class="nav-item">
+                  <a href="/" class="nav-link homepage" href="#">Homepage</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/dashboard" class="nav-link dashboard" href="#">Personal Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard/create/" class="nav-link create" href="#">Create a post</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link logout" href="#">Logout</a>
+                </li>
+
+                {{else}}
+                <li class="nav-item">
+                    <a href="/" class="nav-link homepage" href="#">Homepage</a>
+                  </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link login" href="#">Login</a>
+                  </li>
+                  {{/if}}
+              </ul>
+            </div>
+          </nav>
+    <main>
+        {{#each trails as |trail|}}
+
+        <div class="card">
+
+
+            <div class="col">
+                   <div class="card-body text-center">
+
+                   <div class="card-header bg-info text-white">
+                     <ul class="nav nav-tabs card-header-tabs bg-info text-white">
+
+                       <li class="nav-item">
+                         <a class="nav-link active" href="/trail/{{id}}">Hike</a>
+                         {{!-- link to sinlge post += add-comment  --}}
+                       </li>
+
+                       <li class="nav-item">
+                         <a class="nav-link" href="#">See Comments</a>
+                       </li>
+
+                     </ul>
+                   </div>
+
+                   <div class="card mb-3" style="max-width: 540px;">
+                     <div class="row no-gutters">
+
+                       <div class="col-md-4">
+                         <img src="images/200x200.gif" alt="hikeimageplaceholder">
+                       </div>
+
+                       <div class="col-md-8">
+                         <div class="card-body-winter">
+                           <h5 class="card-title">{{name}}</h5>
+                           <p class="card-text">{{location}}</p>
+                           <ul class="list-group list-group-flush">
+                             <li class="list-group-item">Current weather: {{{hike weather}}}</li>
+                             <li class="list-group-item">Difficulty: {{difficulty}}</li>
+                             <li class="list-group-item">Category: {{category}}</li>
+                             <li class="list-group-item">Best season to hike: {{season}}</li>
+                             <li class="list-group-item">
+
+                               <form class="form-inline">
+                               <div class="form-group mb-2">
+                                 <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
+                               </div>
+                               <button type="submit" class="btn btn-info mb-2" >Add Comment</button>
+                             </form></li>
+
+                           </ul>
+                       </div>
+                       </div>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+
+                       <div class="">
+                           <b>{{user.username}}</b> {{format_date created_date}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                       </div>
+
+
+                     </div>
+
+
+                     <div class="card">
+
+
+                        <div class="col">
+                               <div class="card-body text-center">
+
+                               <div class="card-header bg-info text-white">
+                                 <ul class="nav nav-tabs card-header-tabs bg-info text-white">
+
+                                   <li class="nav-item">
+                                     <a class="nav-link active" href="/trail/{{id}}">Hike</a>
+                                     {{!-- link to sinlge post += add-comment  --}}
+                                   </li>
+
+                                   <li class="nav-item">
+                                     <a class="nav-link" href="#">See Comments</a>
+                                   </li>
+
+                                 </ul>
+                               </div>
+
+                               <div class="card mb-3" style="max-width: 540px;">
+                                 <div class="row no-gutters">
+
+                                   <div class="col-md-4">
+                                     <img src="images/200x200.gif" alt="hikeimageplaceholder">
+                                   </div>
+
+                                   <div class="col-md-8">
+                                     <div class="card-body-winter">
+                                       <h5 class="card-title">{{name}}</h5>
+                                       <p class="card-text">{{location}}</p>
+                                       <ul class="list-group list-group-flush">
+                                         <li class="list-group-item">Current weather: {{{hike weather}}}</li>
+                                         <li class="list-group-item">Difficulty: {{difficulty}}</li>
+                                         <li class="list-group-item">Category: {{category}}</li>
+                                         <li class="list-group-item">Best season to hike: {{season}}</li>
+                                         <li class="list-group-item">
+
+                                           <form class="form-inline">
+                                           <div class="form-group mb-2">
+                                             <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
+                                           </div>
+                                           <button type="submit" class="btn btn-info mb-2" >Add Comment</button>
+                                         </form></li>
+
+                                       </ul>
+                                   </div>
+                                   </div>
+                                 </div>
+                               </div>
+
+                             </div>
+                           </div>
+
+                                   <div class="">
+                                       <b>{{user.username}}</b> {{format_date created_date}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                                   </div>
+
+
+                                 </div>
+
+</div>
+
+{{else}}
+<h3 class="text-center">No post was found! Create one for us!</h3>
+{{/each}}
+
+    </main>
+
+        <footer class="footer rows pb-2">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="/">homepage</a>{{#if loggedIn}} |
+            <a href="/dashboard/">dashboard</a> |
+            <a href="/dashboard/create/">create new post</a>
+            {{else}}
+             | <a href="/login/">login</a>
+            {{/if}}
+            </p>
+        </div>
+        </footer>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+</html>
