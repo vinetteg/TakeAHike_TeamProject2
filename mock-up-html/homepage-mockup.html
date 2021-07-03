@@ -26,13 +26,13 @@
 
                 {{#if loggedIn}}
                 <li class="nav-item">
-                  <a href="/" class="nav-link homepage" href="#">Homepage</a>
+                  <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/dashboard" class="nav-link dashboard" href="#">Personal Dashboard</a>
+                  <a href="./dashboard-mockup.html" class="nav-link dashboard" href="#">Personal Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/dashboard/create/" class="nav-link create" href="#">Create a post</a>
+                    <a href="./createPost-mockup.html" class="nav-link create" href="#">Create a post</a>
                   </li>
                 <li class="nav-item">
                     <a class="nav-link logout" href="#">Logout</a>
@@ -40,10 +40,10 @@
 
                 {{else}}
                 <li class="nav-item">
-                    <a href="/" class="nav-link homepage" href="#">Homepage</a>
+                    <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
                   </li>
                 <li class="nav-item">
-                    <a href="/login" class="nav-link login" href="#">Login</a>
+                    <a href="./login-mockup.html" class="nav-link login" href="#">Login</a>
                   </li>
                   {{/if}}
               </ul>
@@ -62,7 +62,7 @@
                      <ul class="nav nav-tabs card-header-tabs bg-info text-white">
 
                        <li class="nav-item">
-                         <a class="nav-link active" href="/trail/{{id}}">Hike</a>
+                         <a class="nav-link active" href="./singlepost-comment.html">Hike</a>
                          {{!-- link to sinlge post += add-comment  --}}
                        </li>
 
@@ -117,62 +117,54 @@
 
                      <div class="card">
 
+                      <a class="nav-link active" href="./singlepost-comment.html">
+                        <div class="card">
+                          <div class="col">
+                            <div class="card-body text-center">
 
-                        <div class="col">
-                               <div class="card-body text-center">
 
-                               <div class="card-header bg-info text-white">
-                                 <ul class="nav nav-tabs card-header-tabs bg-info text-white">
+                              <div class="card mb-3" style="max-width: 540px">
+                                <div class="row no-gutters">
+                                  <div class="col-md-4" id="img_holder">
+                                  </div>
 
-                                   <li class="nav-item">
-                                     <a class="nav-link active" href="/trail/{{id}}">Hike</a>
-                                     {{!-- link to sinlge post += add-comment  --}}
-                                   </li>
+                                  <div class="col-md-8">
+                                    <div class="card-body-winter">
+                                      <h5 class="card-title">{{name}}</h5>
+                                      <p class="card-text">{{location}}</p>
+                                      <ul class="list-group list-group-flush">
+                                        <div id="zip" style="display: none;">20905</div>
+                                        <li class="list-group-item">
+                                          Current weather:
+                                          <span class="condition"> | </span>
+                                          <span class="temp"> | </span>
+                                          <span class="human"> | </span>
+                                          <span class="wind"> | </span>
+                                        </li>
+                                        <li class="list-group-item">
+                                          Difficulty: {{difficulty}}
+                                        </li>
+                                        <li class="list-group-item">Category: {{category}}</li>
+                                        <li class="list-group-item">
+                                          Best season to hike: {{season}}
+                                        </li>
+                                        <li class="list-group-item">
+                                          <form class="form-inline">
 
-                                   <li class="nav-item">
-                                     <a class="nav-link" href="#">See Comments</a>
-                                   </li>
+                                          </form>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                          <div class="">
+                            <b>{{user.username}}</b> {{format_date created_date}} |
+                            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
 
-                                 </ul>
-                               </div>
-
-                               <div class="card mb-3" style="max-width: 540px;">
-                                 <div class="row no-gutters">
-
-                                   <div class="col-md-4">
-                                     <img src="images/200x200.gif" alt="hikeimageplaceholder">
-                                   </div>
-
-                                   <div class="col-md-8">
-                                     <div class="card-body-winter">
-                                       <h5 class="card-title">{{name}}</h5>
-                                       <p class="card-text">{{location}}</p>
-                                       <ul class="list-group list-group-flush">
-                                         <li class="list-group-item">Current weather: {{{hike weather}}}</li>
-                                         <li class="list-group-item">Difficulty: {{difficulty}}</li>
-                                         <li class="list-group-item">Category: {{category}}</li>
-                                         <li class="list-group-item">Best season to hike: {{season}}</li>
-                                         <li class="list-group-item">
-
-                                           <form class="form-inline">
-                                           <div class="form-group mb-2">
-                                             <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
-                                           </div>
-                                           <button type="submit" class="btn btn-info mb-2" >Add Comment</button>
-                                         </form></li>
-
-                                       </ul>
-                                   </div>
-                                   </div>
-                                 </div>
-                               </div>
-
-                             </div>
-                           </div>
-
-                                   <div class="">
-                                       <b>{{user.username}}</b> {{format_date created_date}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-                                   </div>
 
 
                                  </div>
@@ -198,9 +190,10 @@
         </div>
         </footer>
 
-{{#if loggedIn}}
-<script src="../public/javascript/logout.js"></script>
-{{/if}}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="../public/javascript/main.js"></script>
