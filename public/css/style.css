@@ -1,0 +1,92 @@
+:root {
+  --winter: #74a3d2;
+  --spring: #608032;
+  --summer: #d48824;
+  --autumn: #b5651d;
+  --background: #e8f5ff;
+}
+
+main {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+form {
+  text-align: center;
+  justify-content: center;
+  margin: 5px 5px 5px 5px;
+}
+
+div {
+  margin: 10px 10px 10px 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  justify-content: center;
+}
+
+section {
+  background-color: var(--background);
+}
+h2 {
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  background-color: var(--background);
+}
+
+.create-hike {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.submit-button {
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.content-input {
+  border: 1px solid #000;
+  height: 100px;
+  width: 200px;
+}
+
+.hike-title.hike-input {
+  text-align: center;
+  resize: both;
+  overflow: scroll;
+}
+
+.post-content.content-input {
+  text-align: center;
+}
+
+.email-signup.email-signup {
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+.password-signup {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* post-info.handlebars */
+
+header.card-header-trail-name {
+  background-color: var(--winter);
+}
+
+
+/* Images */
+
+.hike-image-container img {
+  width: 100%;
+  height: 100%;
+}
