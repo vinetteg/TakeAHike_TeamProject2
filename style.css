@@ -76,3 +76,9 @@ main {
   margin: 0 auto;
   padding: 10px;
 }
+
+/* post-info.handlebars */
+
+header.card-header-trail-name {
+  background-color: var(--winter);
+}
