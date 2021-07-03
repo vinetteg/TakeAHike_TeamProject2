@@ -3,7 +3,7 @@
 
         <div class="column">
             <p class=""></p>
-      <a href="/post/{{id}}"  class="">{{title}} </a></p>
+      <a href="/post/{{id}}"  class="">{{name}} </a></p>
       </div>
 
       <div class="column">
@@ -14,7 +14,22 @@
 
     <div class="card-content">
         <div class="content has-text-justified">
-            {{post_content}}
+            {{location}}
+        </div>
+        <div class="content has-text-justified">
+            {{zip}}
+        </div>
+        <div class="content has-text-justified">
+            {{date_been_there}}
+        </div>
+        <div class="content has-text-justified">
+            {{category}}
+        </div>
+        <div class="content has-text-justified">
+            {{season}}
+        </div>
+        <div class="content has-text-justified">
+            {{difficulty}}
         </div>
             <div class="">
                 <b>{{user.username}}</b> {{format_date created_date}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>

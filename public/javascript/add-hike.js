@@ -17,7 +17,6 @@ async function newFormHandler(event) {
     } else { season = "autumn"}
 
 
-
     const response = await fetch(`/api/trail`, {
       method: 'POST',
       body: JSON.stringify({
