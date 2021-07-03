@@ -5,7 +5,7 @@ const userTrailRoutes = require('./userTrailRoutes');
 
 
 router.use('/users', userRoutes);
-router.use('/trail', trailRoutes);
+router.use('/trails', trailRoutes);
 router.use('/user-trail', userTrailRoutes);
 // router.use('/api', apiRoutes);
 
