@@ -58,7 +58,7 @@ async function newFormHandler(event) {
                   }
                   form.classList.add('was-validated');
                   rex();
-                  // newFormHandler(event)
+                  newFormHandler(event)
                 }, false);
               });
             }, false);
