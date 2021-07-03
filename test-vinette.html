@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,80 +64,25 @@
         </ul>
       </div>
     </nav>
-    <main>
-<<<<<<< HEAD
-      <div class="column">
-        <h2 class="title pb-4">Log In</h2>
-        <hr />
-        <form class="login-form">
-          <div class="inputwrap">
-            <label for="email-login">Email:</label>
-            <input type="text" id="username-login" />
-          </div>
-          <div class="inputwrap">
-            <label for="password-login">Password:</label>
-            <input type="password" id="password-login" />
-          </div>
-          <div class="inputwrap">
-            <button type="submit" class="button-login">Login</button>
-            <a href="/signup"
-              ><button type="button" class="button is-danger">Signup</button></a
-            >
-          </div>
-        </form>
-      </div>
-=======
-        <div class="column">
-            <h2 class="title pb-4">Please log in</h2>
-            <hr />
-            <form class="login-form needs-validation" novalidate >
-              <div>
-                <label for="email-login">Email:</label>
-                <input type="text" id="email-login" class="form-control" required/>
-                <div class="invalid-feedback">
-                  please enter the registered email!
-                </div>
-              </div>
-              <div>
-                <label for="password-login">Password:</label>
-                <input type="password" id="password-login" class="form-control"  required />
-                <input type="checkbox" onclick="myFunction()">Show Password
-                <div class="invalid-feedback">
-                  password can not be empty!
-                </div>
-              </div>
-
-              <div>
-                <button type="submit" class="button-login">Login</button>
-                <a href="/signup"><button
-                    type="button"
-                    class="button is-danger"
-                  >Signup</button></a>
-              </div>
-            </div>
-
-            </form>
-
->>>>>>> 0024682baf9f58588429e5c148d9688b3a91656f
-    </main>
+    <main>{{{body}}}</main>
 
     <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
         <p>
           <a href="/">homepage</a>{{#if loggedIn}} |
-          <a href="/dashboard/">dashboard</a> |
+          <a href="/dashboard/">dashboard</a>
+          |
           <a href="/dashboard/create/">create new post</a>
-          {{else}} | <a href="/login/">login</a>
+          {{else}} |
+          <a href="/login/">login</a>
           {{/if}}
         </p>
       </div>
     </footer>
 
-<<<<<<< HEAD
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-    <script src="../public/javascript/login.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -149,14 +93,4 @@
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
   </body>
-=======
-{{#if loggedIn}}
-<script src="../public/javascript/logout.js"></script>
-{{/if}}
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="../public/javascript/login.js"></script>
-</body>
->>>>>>> 0024682baf9f58588429e5c148d9688b3a91656f
 </html>
