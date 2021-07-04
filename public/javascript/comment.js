@@ -18,7 +18,7 @@ async function commentFormHandler(event) {
             'Content-Type': 'application/json'
           }
         });
-
+          console.log(comment_text);
         if (response.ok) {
           document.location.reload();//***** */
         } else {
@@ -27,7 +27,10 @@ async function commentFormHandler(event) {
       }
   }
 
+<<<<<<< HEAD
   document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+=======
+>>>>>>> 2ebf506
 
   (function() {
     'use strict';
@@ -47,4 +50,8 @@ async function commentFormHandler(event) {
         }, false);
       });
     }, false);
+<<<<<<< HEAD
 })();
+=======
+  })();
+>>>>>>> 2ebf506
