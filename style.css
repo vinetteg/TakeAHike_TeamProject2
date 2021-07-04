@@ -71,8 +71,6 @@ button {
 }
 
 .inputwrap.label {
-<<<<<<< HEAD
-=======
   display: inline-block;
   width: 100px;
   text-align: right;
@@ -99,7 +97,6 @@ button {
 }
 
 .td.checkwrap {
->>>>>>> dbc8649b33410b31dad6e423e5105d246574f83e
   display: inline-block;
   width: 100px;
   text-align: right;
