@@ -54,4 +54,3 @@ Trail.init(
 );
 
 module.exports = Trail;
-Model.enableModelComments();

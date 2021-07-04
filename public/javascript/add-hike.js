@@ -20,6 +20,8 @@ async function newFormHandler(event) {
         category.push(createYourOwn)
       }
 
+    if (name && location && zip && date_been_there && season && difficulty) {
+
     const response = await fetch(`/api/trail`, {
       method: 'POST',
       body: JSON.stringify({
@@ -35,6 +37,11 @@ async function newFormHandler(event) {
         'Content-Type': 'application/json'
       }// return json file
     });
+    console.log('fetching works')}
+
+    else {alert("missing information! please review your form!")}
+    console.log("next step works");
+
 
     if (response.ok) {
       document.location.replace('/dashboard');
@@ -57,8 +64,9 @@ async function newFormHandler(event) {
                     event.stopPropagation();
                   }
                   form.classList.add('was-validated');
+                  event.preventDefault();
                   rex();
-                  // newFormHandler(event)
+                  newFormHandler(event)
                 }, false);
               });
             }, false);

@@ -1,5 +1,5 @@
 <!-- displaying articles -->
-{{> post-info trail}}
+{{> trail-info trail}}
 
 {{#if loggedIn}}
 <form class="comment-form needs-validation" novalidate>
@@ -16,8 +16,8 @@
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> comment trail.comments}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="../public/javascript/comment.js"></script>
 {{/if}}
