@@ -18,7 +18,7 @@ async function commentFormHandler(event) {
             'Content-Type': 'application/json'
           }
         });
-
+          console.log(comment_text);
         if (response.ok) {
           document.location.reload();//***** */
         } else {
@@ -27,4 +27,23 @@ async function commentFormHandler(event) {
       }
   }
 
-  document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+          event.preventDefault();
+          commentFormHandler(event)
+        }, false);
+      });
+    }, false);
+  })();

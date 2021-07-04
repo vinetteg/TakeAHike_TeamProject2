@@ -167,9 +167,12 @@
 
 
       {{#if loggedIn}}
-      <form class="comment-form">
+      <form class="comment-form needs-validation" novalidate>
         <div>
-          <textarea class="comment-textarea" name="comment-body"></textarea>
+          <textarea class="comment-textarea form-control" name="comment-body" required></textarea>
+          <div class="invalid-feedback">
+            Can't send an empty comment!
+          </div>
         </div>
 
         <div>
