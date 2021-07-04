@@ -1,6 +1,3 @@
-
-{{#each trails as |trail|}}
-
 <div class="card">
  <div class="col">
   <div class="card-body text-center">
@@ -20,8 +17,8 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
 
-    <div class="col-md-4 hike-image-container">
-      <img src="{{image_source}}" alt="hikeimageplaceholder">
+    <div class="col-md-4">
+      <img src="images/200x200.gif" alt="hikeimageplaceholder">
     </div>
 
     <div class="col-md-8">
@@ -29,7 +26,7 @@
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">{{location}}</p>
     <ul class="list-group list-group-flush">
-    {{!-- <li class="list-group-item">Current weather: {{{hike weather}}}</li> --}}
+    <li class="list-group-item">Current weather: {{{hike weather}}}</li>
     <li class="list-group-item">Difficulty: {{difficulty}}</li>
     <li class="list-group-item">Category: {{category}}</li>
     <li class="list-group-item">Best season to hike: {{season}}</li>
@@ -55,7 +52,3 @@
   <b>{{user.username}}</b> {{format_date created_date}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
 </div>
-
-{{else}}
-<h3 class="text-center">No post was found! Create one for us!</h3>
-{{/each}}
