@@ -37,3 +37,4 @@ UserTrail.init(
 );
 
 module.exports = UserTrail;
+Model.enableModelComments();
