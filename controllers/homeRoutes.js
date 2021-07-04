@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     
         const trails = HikingData.map((trail) => trail.get({ plain: true }));
         
-        res.render('index', { trails });    
+        res.render('dashboard', { trails });    
     } catch (error) {
         res.status(500).json(err);
     }
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 // Get all trail by ID
 router.get('trail/:id', async (req, res) => {
     try {
-
+        // Fetching data 
       const trailData = await Trail.findByPk(req.params.id, {
           include: [
               {
@@ -32,7 +32,7 @@ router.get('trail/:id', async (req, res) => {
       });
 
       const trail = trailData.get({ plain: true });
-
+    //   Displaying the data on handlebar named trail
       res.render('trail', {
           ...project,
         //   logged_in: req.session.logged_in
@@ -63,11 +63,59 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
+router.post('/login', async (req, res) => {
+try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
+    if (!userData) {
+    res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+    return;
+    }
 
-router.get('/login', async (req, res) => {
-    console.log("Hello there, here is rhe home pages in text");
-    res.render('login');
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+    res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+    return;
+    }
+
+    req.session.save(() => {
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
+    
+    res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+} catch (err) {
+    res.status(400).json(err);
+}
 });
+
+// Loggout session && Log out button
+router.post('/logout', (req, res) => {
+if (req.session.logged_in) {
+    req.session.destroy(() => {
+    res.status(204).end();
+    });
+} else {
+    res.status(404).end();
+}
+});
+
+router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
+  
+    res.render('signup');
+});
+  
+
 
 module.exports = router;
 
