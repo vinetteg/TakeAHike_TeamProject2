@@ -1,10 +1,13 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password');
 
-const Comment = mongoose.model('Comment', {
-    title: String,
-    content: String
+const ModelComments = require('sequelize-model-comments').init(sequelize, options);
+ModelComments.defineModels({});
+
+const Post = sequelize.define('Post', {
+    title: Sequelize.STRING,
+    content: Sequelize.STRING,
   });
-  
-  
-  module.exports = Comment
+   
+  Post.enableModelComments();
+
