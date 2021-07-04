@@ -38,15 +38,15 @@
         <ul class="navbar-nav">
           {{#if loggedIn}}
           <li class="nav-item">
-            <a href="/" class="nav-link homepage" href="#">Homepage</a>
+            <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
           </li>
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link dashboard" href="#"
+            <a  class="nav-link dashboard" href="./dashboard-mockup.html"
               >Personal Dashboard</a
             >
           </li>
           <li class="nav-item">
-            <a href="/dashboard/create/" class="nav-link create" href="#"
+            <a  class="nav-link create" href="./createPost-mockup.html"
               >Create a post</a
             >
           </li>
@@ -56,47 +56,74 @@
 
           {{else}}
           <li class="nav-item">
-            <a href="/" class="nav-link homepage" href="#">Homepage</a>
+            <a class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
           </li>
           <li class="nav-item">
-            <a href="/login" class="nav-link login" href="#">Login</a>
+            <a  class="nav-link login" href="./login-mockup.html">Login</a>
           </li>
           {{/if}}
         </ul>
       </div>
     </nav>
     <main>
-        <div class="column">
-            <h2 class="title pb-4">create new account:</h2><hr>
-            <form class="signup-form needs-validation" novalidate>
+      <div class="column">
+        <h2 class="title">Create A New Account</h2>
+        <hr />
+        <form class="signup-form needs-validation" novalidate>
+          <div class="inputwrap">
+            <label for="name-signup">Name:</label>
+            <input
+              type="text"
+              placeholder="e.g. John Hiker"
+              id="name-signup"
+              class="form-control"
+              required
+            />
+          </div>
 
-              <div class="inputwrap">
-                <label for="name-signup">name:</label>
-                <input type="text" id="name-signup" class="form-control" required/>
-              </div>
+          <div class="inputwrap">
+            <label for="email-signup">Email:</label>
+            <input
+              type="text"
+              placeholder="e.g.john@takeahike.com"
+              id="email-signup"
+              class="form-control"
+              required
+            />
+          </div>
 
-              <div class="inputwrap">
-                <label for="email-signup">email:</label>
-                <input type="text" id="email-signup" class="form-control" required />
-              </div>
+          <div class="inputwrap">
+            <label for="password-signup">Password:</label>
+            <input
+              type="password"
+              id="password-signup"
+              class="form-control"
+              required
+            />
+          </div>
 
-              <div class="inputwrap">
-                <label for="password-signup">password:</label>
-                <input type="password" id="password-signup" class="form-control" required/>
-              </div>
-
-              <div class="inputwrap">
-              <label for="password-signup">confrim password:</label>
-              <input type="password" placeholder="Confirm Password" id="confirm_password" class="form-control" required>
-              <div class="invalid-feedback">
-                password needs to match and should not be empty!!!
-              </div>
+          <div class="inputwrap">
+            <label for="password-confirm">Confirm password:</label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              id="confirm_password"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">
+              password needs to match and should not be empty!!!
             </div>
+          </div>
 
-
-              <div>
-                <button type="submit" class="button is-primary pure-button pure-button-primary">signup</button>
-              </div>
+          <div>
+            <button
+              type="submit"
+              class="button is-primary pure-button pure-button-primary"
+            >
+              signup
+            </button>
+          </div>
         </form>
       </div>
     </main>
