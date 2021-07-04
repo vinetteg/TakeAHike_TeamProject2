@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="#">Take A Hike</a>
       <button
         class="navbar-toggler"
@@ -38,15 +38,17 @@
         <ul class="navbar-nav">
           {{#if loggedIn}}
           <li class="nav-item">
-            <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
           </li>
           <li class="nav-item">
-            <a  class="nav-link dashboard" href="./dashboard-mockup.html"
+            <a class="nav-link dashboard" href="./dashboard-mockup.html"
               >Personal Dashboard</a
             >
           </li>
           <li class="nav-item">
-            <a  class="nav-link create" href="./createPost-mockup.html"
+            <a class="nav-link create" href="./createPost-mockup.html"
               >Create a post</a
             >
           </li>
@@ -56,10 +58,12 @@
 
           {{else}}
           <li class="nav-item">
-            <a class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
           </li>
           <li class="nav-item">
-            <a  class="nav-link login" href="./login-mockup.html">Login</a>
+            <a class="nav-link login" href="./login-mockup.html">Login</a>
           </li>
           {{/if}}
         </ul>
@@ -96,6 +100,7 @@
             <label for="password-signup">Password:</label>
             <input
               type="password"
+              placeholder="Create password"
               id="password-signup"
               class="form-control"
               required
@@ -121,7 +126,7 @@
               type="submit"
               class="button is-primary pure-button pure-button-primary"
             >
-              signup
+              Create Account
             </button>
           </div>
         </form>
