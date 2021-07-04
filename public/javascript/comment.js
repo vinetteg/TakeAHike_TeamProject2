@@ -1,24 +1,24 @@
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    const comment_text = document.querySelector(".comment-textarea").value.trim();
+    const comment = document.querySelector(".comment-textarea").value.trim();
 
     const trails_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
 
-    if (comment_text) {
+    if (comment) {
         const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
             trails_id,
-            comment_text
+            comment
           }),
           headers: {
             'Content-Type': 'application/json'
           }
         });
-          console.log(comment_text);
+          console.log(comment);
         if (response.ok) {
           document.location.reload();//***** */
         } else {
@@ -27,10 +27,7 @@ async function commentFormHandler(event) {
       }
   }
 
-<<<<<<< HEAD
-  document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
-=======
->>>>>>> rex
+
 
   (function() {
     'use strict';
@@ -50,8 +47,4 @@ async function commentFormHandler(event) {
         }, false);
       });
     }, false);
-<<<<<<< HEAD
-})();
-=======
   })();
->>>>>>> rex
