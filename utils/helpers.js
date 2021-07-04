@@ -21,11 +21,11 @@ module.exports = {
   }
 
 
-module.exports = {
-  format_date: date => {
-      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-    }
-};
+// module.exports = {
+//   format_date: date => {
+//       return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+//     }
+// };
 
 // module.exports = {
 //     format_date: (date) => {
@@ -52,9 +52,9 @@ module.exports = {
   
 // usic
 
-servermodule.exports = {
-    format_date: date => {
-        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-      }
-    };
+// servermodule.exports = {
+//     format_date: date => {
+//         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+//       }
+//     };
 
