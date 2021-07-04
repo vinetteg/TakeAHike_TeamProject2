@@ -11,12 +11,43 @@ router.get('/', async (req, res) => {
     
         const trails = HikingData.map((trail) => trail.get({ plain: true }));
         
-        res.render('homepage', { trails });    
+        res.render('index', { trails });    
     } catch (error) {
         res.status(500).json(err);
     }
     
 });
+
+// Get all trail by ID
+router.get('trail/:id', async (req, res) => {
+    try {
+
+      const trailData = await Trail.findByPk(req.params.id, {
+          include: [
+              {
+                  model: User,
+                  attributes: ['name'],
+              }
+          ]
+      });
+
+      const trail = trailData.get({ plain: true });
+
+      res.render('trail', {
+          ...project,
+        //   logged_in: req.session.logged_in
+      });
+  
+      if (!trailData) {
+        res.status(404).json({ message: 'No hike found' });
+        return;
+      }
+      res.render('trail-info', { trails });    
+      res.status(200).json(trailData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 router.get('/dashboard', async (req, res) => {
     console.log("Hello there, here is rhe home pages in text");
