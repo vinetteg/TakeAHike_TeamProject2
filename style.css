@@ -8,6 +8,7 @@
 
 main {
   font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--background);
 }
 
 form {
@@ -36,7 +37,7 @@ h2 {
   text-align: center;
 }
 
-main {
+.title {
   background-color: var(--background);
 }
 
@@ -76,10 +77,37 @@ main {
   padding: 10px;
 }
 
+<<<<<<< HEAD
 header.card-header {
   background-color: var(--winter);
 }
 
 .trail-name {
   font-weight: bold;
+=======
+/* signup.handlebars */
+
+.input.text {
+  top: 0px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+  float: left;
+  display: inline-block;
+  clear: left;
+  width: 150px;
+  text-align: right;
+}
+
+.inputwrap label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+>>>>>>> a90dbda35a4a9c960b483b201306e4fb240cfbe0
 }
