@@ -50,6 +50,24 @@ button {
   background-color: var(--spring);
 }
 
+/* Nav bar related - should be on every page */
+nav {
+  background-color: var(--winter);
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  color: black;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: var(--autumn);
+}
 /* signup.handlebars */
 
 .input.text {
