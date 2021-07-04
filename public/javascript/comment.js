@@ -18,7 +18,9 @@ async function commentFormHandler(event) {
             'Content-Type': 'application/json'
           }
         });
-          console.log(comment);
+
+          console.log(comment_text);
+
         if (response.ok) {
           document.location.reload();//***** */
         } else {
@@ -26,8 +28,6 @@ async function commentFormHandler(event) {
         }
       }
   }
-
-
 
   (function() {
     'use strict';
