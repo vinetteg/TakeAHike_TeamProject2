@@ -27,7 +27,6 @@ async function commentFormHandler(event) {
       }
   }
 
-
   (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -47,3 +46,4 @@ async function commentFormHandler(event) {
       });
     }, false);
   })();
+
