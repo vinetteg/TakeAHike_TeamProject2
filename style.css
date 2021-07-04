@@ -6,8 +6,6 @@
   --background: #e8f5ff;
 }
 
-/* Styling specific to all pages */
-
 main {
   font-family: "Source Sans Pro", sans-serif;
   background-color: var(--background);
@@ -44,7 +42,48 @@ button {
   background-color: var(--spring);
 }
 
-/* signup.handlebars. */
+.title {
+  background-color: var(--background);
+}
+
+.create-hike {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.submit-button {
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.content-input {
+  border: 1px solid #000;
+  height: 100px;
+  width: 200px;
+}
+
+.hike-title.hike-input {
+  text-align: center;
+  resize: both;
+  overflow: scroll;
+}
+
+.post-content.content-input {
+  text-align: center;
+}
+
+.email-signup.email-signup {
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+.password-signup {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* signup.handlebars */
 
 .input.text {
   top: 0px;

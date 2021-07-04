@@ -1,6 +1,7 @@
 const User = require('./User');
 const Trail = require('./Trail');
 const UserTrail = require('./UserTrail')
+const TrailComment = require('./TrailComment')
 
 // User has many Trail
 User.belongsTo(Trail, {
@@ -14,6 +15,7 @@ Trail.hasMany(User, {
 
 User.belongsToMany(Trail, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE',
     through: {
         model: UserTrail,
         unique: false
@@ -30,5 +32,17 @@ Trail.belongsToMany(User, {
     as: 'trails_of_users'
 })
 
+TrailComment.belongsTo(Trail, {
+    foreignKey: 'trail_id',
+});
 
-module.exports = { User, Trail, UserTrail }
+Trail.hasMany(TrailComment, {
+    foreignKey: 'trail_id',
+    onDelete: 'CASCADE',
+});
+
+
+
+
+
+module.exports = { User, Trail, UserTrail, TrailComment }

@@ -1,14 +1,13 @@
-<div class="">
-<a href="/dashboard/create/"><button id="create-post" class="">create post</button></a>
+<div>
 
-<h2 class="title">dashboard: your posts</h2><hr>
-{{#if posts.length}}
+<h2 class="title">dashboard: your trails</h2><hr>
+{{#if trails.length}}
     <div>
-    {{#each posts as |post|}}
-        {{> post-info post}}
+    {{#each trails as |trail|}}
+        {{> trail-info trail}}
     {{/each}}
     </div>
 {{else}}
-<h3 class="">you do not have any post yet</h3>
+<h3>you do not have any trail yet</h3>
 
 {{/if}}
