@@ -139,10 +139,8 @@ a:visited {
   text-align: right;
 }
 
-.td.checkwrap {
-  display: inline-block;
-  width: 100px;
-  text-align: right;
+.check {
+  text-align: left;
 }
 
 /* homepage specific */
