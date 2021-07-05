@@ -1,14 +1,15 @@
 :root {
-  --winter: #74a3d2;
-  --spring: #608032;
-  --summer: #d48824;
-  --autumn: #b5651d;
-  --background: #e8f5ff;
+  --winter: #a5b5c2;
+  --spring: #508aac;
+  --summer: #0e6464;
+  --autumn: #289ccc;
+  --background: #3f5825;
+  --trail: #bed9ef;
 }
 
 main {
   font-family: "Source Sans Pro", sans-serif;
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 
 form {
@@ -31,7 +32,7 @@ button {
 }
 
 section {
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 h2 {
   justify-content: center;
@@ -43,16 +44,20 @@ button {
 }
 
 .title {
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 
 button {
   background-color: var(--spring);
 }
 
+ul {
+  background-color: var(--spring);
+}
+
 /* Nav bar related - should be on every page */
 nav {
-  background-color: var(--winter);
+  background-color: var(--trail);
   color: white;
 }
 
@@ -67,6 +72,14 @@ a:link {
 
 a:visited {
   color: var(--autumn);
+}
+
+.card {
+  background-color: var(--trail);
+}
+
+.navbar-nav {
+  background-color: var(--trail);
 }
 /* signup.handlebars */
 
@@ -118,4 +131,10 @@ a:visited {
   display: inline-block;
   width: 100px;
   text-align: right;
+}
+
+/* homepage specific */
+
+.button.btn-add {
+  background-color: var(--spring);
 }
