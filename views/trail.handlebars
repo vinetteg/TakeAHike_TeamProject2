@@ -1,4 +1,4 @@
-<a class="nav-link active" href="/trail/{{id}}">
+{{!-- <a class="nav-link active" href="/trail/{{id}}"> --}}
       <div class="card">
         <div class="col">
           <div class="card-body text-center">
@@ -41,7 +41,6 @@
             </div>
           </div>
         </div>
-      </a>
-<div class="">
+      {{!-- </a> --}}
 <b>{{user.username}}</b> {{format_date created_date}} |
-<a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+<a href="/add-comment/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>

@@ -24,13 +24,14 @@ User.init(
         email: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true,
+            },
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8],
-            }
          },
         access_level: {
             type: DataTypes.INTEGER,
@@ -39,13 +40,7 @@ User.init(
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
-        },
-        trails_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'trail',
-                key: 'id',
-            },
+            defaultValue: DataTypes.NOW,
         },
     },
     {

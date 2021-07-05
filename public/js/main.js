@@ -12,12 +12,12 @@ const key = [
     "f336774a2e3724c443c558b879f4e3b9",
     "2d91c3e3ea90f1082db08374e4aaaeac"
   ];
-  const random = Math.floor(Math.random() * key.length);
+const random = Math.floor(Math.random() * key.length);
 
 
 const zip = document.getElementById('zip').innerHTML;
-console.log(zip);
-weatherZip(zip);
+// console.log(zip);
+
 
 
 
@@ -25,7 +25,7 @@ weatherZip(zip);
 
 
 function weatherZip(zipcode) {
-    var url = 'https://api.openweathermap.org/data/2.5/weather?zip='+ zipcode+ ',us&appid='+ key[random];
+    var url = 'https://api.openweathermap.org/data/2.5/weather?zip='+zipcode+',us&appid='+key[random];
     fetch(url)
     .then(function (response) {
         if (response.status === 404) {
@@ -82,3 +82,6 @@ function images(data) {
 
 
   }
+
+// Calling weather API function
+weatherZip(zip);

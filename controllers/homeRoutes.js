@@ -5,49 +5,103 @@ const { User, Trail, UserTrail } = require('../models')
 // Get all Trail in the dashboard
 router.get('/', async (req, res) => {
     try {
+        
+        const userData = await User.findAll({
+            attributes: { exclude: ["password"] },
+            order: [["name", "ASC"]],
+        });
+
+        const users = userData.map((user) => user.get({ plain: true }));
+        
         const HikingData = await Trail.findAll({
             include: [{ model: User }]
         });
     
-        const trails = HikingData.map((trail) => trail.get({ plain: true }));
-        
-        res.render('dashboard', { trails });    
+        const trails = HikingData.map((trail) => trail.get({ plain: true }));    
+        res.render('homepage', { trails, users });    
     } catch (error) {
         res.status(500).json(err);
     }
     
 });
 
-// Get all trail by ID
-router.get('trail/:id', async (req, res) => {
+router.get('/trail/:id', async (req, res) => {
     try {
-        // Fetching data 
       const trailData = await Trail.findByPk(req.params.id, {
-          include: [
-              {
-                  model: User,
-                  attributes: ['name'],
-              }
-          ]
-      });
-
-      const trail = trailData.get({ plain: true });
-    //   Displaying the data on handlebar named trail
-      res.render('trail', {
-          ...project,
-        //   logged_in: req.session.logged_in
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
       });
   
-      if (!trailData) {
-        res.status(404).json({ message: 'No hike found' });
-        return;
-      }
-      res.render('trail-info', { trails });    
-      res.status(200).json(trailData);
+      const trail = trailData.get({ plain: true });
+  
+      res.render('trail', {
+        ...trail,
+        logged_in: req.session.logged_in
+      });
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+// Add comment route, Once you select a hike you'll be able to make a comment
+router.get('/add-comment/:id', async (req, res) => {
+try {
+    const trailData = await Trail.findByPk(req.params.id, {
+    include: [
+        {
+        model: User,
+        attributes: ['name'],
+        },
+    ],
+    });
+
+    const trail = trailData.get({ plain: true });
+
+    res.render('trail', {
+    ...trail,
+    logged_in: req.session.logged_in
+    });
+} catch (err) {
+    res.status(500).json(err);
+}
+});
+
+
+// Get trail by ID
+// router.get('/trail/:id', async (req, res) => {
+//     try {
+//         // Fetching data 
+//       const trailData = await Trail.findByPk(req.params.id, {
+//         //   include: [
+//         //       {
+//         //           model: User,
+//         //           attributes: ['name'],
+//         //       }
+//         //   ]
+//       });
+
+//       const trail = trailData.get({ plain: true });
+
+//     //   Displaying the data on handlebar named trail
+//       res.render('trail', {
+//           ...trail,
+//         //   logged_in: req.session.logged_in
+//       });
+  
+//       if (!trailData) {
+//         res.status(404).json({ message: 'No hike found' });
+//         return;
+//       }
+//       res.render('trail-info', { trails });    
+//       res.status(200).json(trailData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 router.get('/dashboard', async (req, res) => {
     console.log("Hello there, here is rhe home pages in text");

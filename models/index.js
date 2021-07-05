@@ -4,14 +4,6 @@ const UserTrail = require('./UserTrail')
 const TrailComment = require('./TrailComment')
 
 // User has many Trail
-User.belongsTo(Trail, {
-    foreignKey: 'trails_id',
-});
-
-Trail.hasMany(User, {
-    foreignKey: 'trails_id',
-    onDelete: 'CASCADE',
-})
 
 User.belongsToMany(Trail, {
     foreignKey: 'user_id',
