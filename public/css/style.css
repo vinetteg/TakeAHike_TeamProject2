@@ -27,10 +27,6 @@ label {
   text-align: center;
 }
 
-button {
-  justify-content: center;
-}
-
 section {
   background-color: var(--trail);
 }
@@ -64,6 +60,7 @@ nav {
 .navbar-brand {
   font-weight: bolder;
   color: black;
+  font-size: larger;
 }
 
 a:link {
