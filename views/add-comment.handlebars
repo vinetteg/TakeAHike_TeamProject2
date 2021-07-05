@@ -1,22 +1,23 @@
 <!-- displaying articles -->
-{{> post-info trail}}
+{{> trail-info trail}}
 
 {{#if loggedIn}}
-<form class="comment-form">
+<form class="comment-form needs-validation" novalidate>
+        <div>
+          <textarea class="comment-textarea form-control" name="comment-body" required></textarea>
+          <div class="invalid-feedback">
+            Can't send an empty comment!
+          </div>
+        </div>
 
-  <div>
-    <textarea class="comment-textarea" name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button class="button-add-comment" type="submit">add comment</button>
-  </div>
-
+        <div>
+          <button class="button-add-comment" type="submit">add comment</button>
+        </div>
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> comment trail.comments}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="../public/javascript/comment.js"></script>
 {{/if}}

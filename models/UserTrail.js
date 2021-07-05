@@ -22,7 +22,7 @@ UserTrail.init(
     trail_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Trail',
+        model: 'trail',
         key: 'id',
       },
     }
@@ -37,4 +37,4 @@ UserTrail.init(
 );
 
 module.exports = UserTrail;
-Model.enableModelComments();
+// Model.enableModelComments();
