@@ -21,24 +21,24 @@
 
     {{#if loggedIn}}
     <li class="nav-item">
-    <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
+    <a href="./homepage-mockup.html" class="nav-link homepage" href="/">Homepage</a>
     </li>
     <li class="nav-item">
-    <a href="./dashboard-mockup.html" class="nav-link dashboard" href="#">Personal Dashboard</a>
+    <a href="./dashboard-mockup.html" class="nav-link dashboard" href="/">Personal Dashboard</a>
     </li>
     <li class="nav-item">
-    <a href="./createPost-mockup.html" class="nav-link create" href="#">Create a post</a>
+    <a href="./createPost-mockup.html" class="nav-link create" href="/create-post">Create a post</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link logout" href="#">Logout</a>
+    <a class="nav-link logout" href="/logout">Logout</a>
     </li>
 
     {{else}}
     <li class="nav-item">
-    <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
+    <a href="/" class="nav-link homepage">Homepage</a>
     </li>
     <li class="nav-item">
-    <a href="./login-mockup.html" class="nav-link login" href="#">Login</a>
+    <a href="/login" class="nav-link login">Login</a>
     </li>
     {{/if}}
     </ul>

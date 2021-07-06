@@ -1,55 +1,53 @@
-// const { response } = require("express");
+const loginFormHandler = async (event) => {
+  event.preventDefault();
 
-async function loginFormHandler(event) {
-    event.preventDefault();
+  // Collect values from the login form
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-    if (email && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'post',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      }); console.log("email: "+ email + ' w/ password: ' + password);
-
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
-
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-          event.preventDefault();
-          loginFormHandler(event)
-        }, false);
-      });
-    }, false);
-})();
-
-
-  function myFunction() {
-    var x = document.getElementById("password-login");
-    if (x.type === "password") {
-      x.type = "text";
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/homepage');
     } else {
-      x.type = "password";
+      alert(response.statusText);
     }
   }
+};
+
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);

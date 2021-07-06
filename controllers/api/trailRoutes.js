@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
   try {
     const newTrail = await Trail.create({
       ...req.body
-      // user_id: req.session.user_id,
+      
     });
 
     res.status(200).json(newTrail);
@@ -47,23 +47,6 @@ router.post('/', async (req, res) => {
 });
 
 
-// UPDATE TRAIL BY VALUE
-router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
-  try {
-    const updateTrail = await Trail.update(req.body, {
-       where: {
-         id: req.params.id,
-       },
-      });
-      
-    if (!updateTrail[0]) {
-      res.status(404).json({message: 'No Trail with this id! '})
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // DELETE a hike
 router.delete('/:id', async (req, res) => {
@@ -71,10 +54,8 @@ router.delete('/:id', async (req, res) => {
     const trailData = await Trail.destroy({
       where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
       },
     });
-
     if (!trailData) {
       res.status(404).json({ message: 'No hike found with this id!' });
       return;
