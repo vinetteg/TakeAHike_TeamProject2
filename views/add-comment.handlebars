@@ -1,7 +1,7 @@
 <!-- displaying articles -->
 {{> trail-info trail}}
 
-{{#if loggedIn}}
+{{#if logged_in}}
 <form class="comment-form needs-validation" novalidate>
         <div>
           <textarea class="comment-textarea form-control" name="comment-body" required></textarea>
@@ -18,6 +18,6 @@
 
 {{> comment trail.comments}}
 
-{{#if loggedIn}}
-<script src="../public/javascript/comment.js"></script>
+{{#if logged_in}}
+<script src="./js/comment.js"></script>
 {{/if}}

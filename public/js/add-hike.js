@@ -22,13 +22,12 @@ async function newFormHandler(event) {
 
     if (name && location && zip && date_been_there && season && difficulty) {
 
-    const response = await fetch(`/api/trail`, {
+    const response = await fetch(`/api/trails`, {
       method: 'POST',
       body: JSON.stringify({
         name,
         location,
-        zip,
-        date_been_there,
+        image_source,
         category,
         season,
         difficulty
@@ -44,7 +43,7 @@ async function newFormHandler(event) {
 
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -52,24 +51,24 @@ async function newFormHandler(event) {
 
 
 (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              var forms = document.getElementsByClassName('needs-validation');
-              // Loop over them and prevent submission
-              var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add('was-validated');
-                  event.preventDefault();
-                  rex();
-                  newFormHandler(event)
-                }, false);
-              });
-            }, false);
+'use strict';
+window.addEventListener('load', function() {
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.getElementsByClassName('needs-validation');
+  // Loop over them and prevent submission
+  var validation = Array.prototype.filter.call(forms, function(form) {
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+      event.preventDefault();
+      rex();
+      newFormHandler(event)
+    }, false);
+  });
+}, false);
   })();
 
 

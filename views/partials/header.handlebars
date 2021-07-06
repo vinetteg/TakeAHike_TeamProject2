@@ -19,26 +19,26 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <li class="nav-item">
-    <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
+    <a href="/" class="nav-link homepage">Homepage</a>
     </li>
     <li class="nav-item">
-    <a href="./dashboard-mockup.html" class="nav-link dashboard" href="#">Personal Dashboard</a>
+    <a href="/my-hikes" class="nav-link dashboard">My Hikes</a>
     </li>
     <li class="nav-item">
-    <a href="./createPost-mockup.html" class="nav-link create" href="#">Create a post</a>
+    <a href="/add-trail" class="nav-link create">Add Trail</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link logout" href="#">Logout</a>
+    <a class="nav-link logout" href="/logout">Logout</a>
     </li>
 
     {{else}}
     <li class="nav-item">
-    <a href="./homepage-mockup.html" class="nav-link homepage" href="#">Homepage</a>
+    <a href="/" class="nav-link homepage">Homepage</a>
     </li>
     <li class="nav-item">
-    <a href="./login-mockup.html" class="nav-link login" href="#">Login</a>
+    <a href="/login" class="nav-link login">Login</a>
     </li>
     {{/if}}
     </ul>

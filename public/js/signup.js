@@ -1,71 +1,53 @@
-async function signupFormHandler(event) {
-    event.preventDefault();
+const loginFormHandler = async (event) => {
+  event.preventDefault();
 
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-    const name = document.querySelector('#name-signup').value.trim();
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
-      today = mm + '/' + dd + '/' + yyyy;
-    const date_created = today;
-    const access_level = 1;
+  // Collect values from the login form
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
-    if (email && password && name) {
-      const response = await fetch('/api/users', {
-        method: 'post',
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-          access_level,
-          date_created
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      }); console.log(email, password, name, access_level, date_created);
-
-      // check the response status
-      if (response.ok) {
-        console.log('success');
-        document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
-    }
-}
-
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-        event.preventDefault();
-        signupFormHandler(event)
-      }, false);
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
     });
-  }, false);
-})();
 
-
-var password = document.getElementById("password-signup")
-  , confirm_password = document.getElementById("confirm_password");
-
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
   }
-}
+};
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);

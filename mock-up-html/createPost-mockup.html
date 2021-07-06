@@ -37,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
 
-                {{#if loggedIn}}
+                {{#if logged_in}}
                 <li class="nav-item">
                   <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
                 </li>
@@ -211,7 +211,7 @@
     <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
         <p>
-          <a href="/">homepage</a>{{#if loggedIn}} |
+          <a href="/">homepage</a>{{#if logged_in}} |
           <a href="/dashboard/">dashboard</a> |
           <a href="/dashboard/create/">create new post</a>
           {{else}} | <a href="/login/">login</a>
@@ -220,7 +220,7 @@
       </div>
     </footer>
 
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <script src="../../public/javascript/logout.js"></script>
     {{/if}}
     <script
@@ -232,6 +232,6 @@
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
-    <script src="../public/javascript/add-hike.js"></script>
+    <script src="/js/add-hike.js"></script>
   </body>
 </html>

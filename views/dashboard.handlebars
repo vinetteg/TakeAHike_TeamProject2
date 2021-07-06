@@ -1,6 +1,4 @@
-<div>
-
-<h2 class="title">dashboard: your trails</h2><hr>
+<div class="trail-container"><h2>Trails</h2>
 {{#if trails.length}}
     <div>
     {{#each trails as |trail|}}
@@ -9,5 +7,5 @@
     </div>
 {{else}}
 <h3>you do not have any trail yet</h3>
-
+</div> {{!--  Closing Div for the trail-container class  --}}
 {{/if}}
