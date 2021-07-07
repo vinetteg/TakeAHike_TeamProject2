@@ -1,8 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create our Trail model
 class Trail extends Model {}
 
+// create fields/columns for Trail model
 Trail.init(
     {
         id: {
@@ -25,7 +27,7 @@ Trail.init(
          },
         image_source: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         date_been_there: {
             type: DataTypes.DATE,
@@ -43,15 +45,20 @@ Trail.init(
             type: DataTypes.STRING,
             allownull: false
         },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id'
+        }
+      }
     },
     {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'trail'
+      sequelize,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'trail'
     }
-);
+  );
 
-module.exports = Trail;
-// Model.enableModelComments();
+  module.exports = Trail;

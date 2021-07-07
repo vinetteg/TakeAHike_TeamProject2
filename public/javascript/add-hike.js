@@ -3,31 +3,29 @@ async function newFormHandler(event) {
 
     const name = document.querySelector("#post-title").value;
     const location = document.querySelector("#post-location").value
-    const zip = document.querySelector("#post-zip").value
+    const zipcode = document.querySelector("#post-zip").value
     const date_been_there = document.querySelector("#post-date").value
-    let season = document.querySelector(".post-season").value;
-    let difficulty = document.querySelector(".post-difficulty").value
-     var category = new Array();
-     var tblFruits = document.getElementById("tblFruits");
-     var chks = tblFruits.getElementsByTagName("INPUT");
-     for (var i = 0; i < chks.length; i++) {
-         if (chks[i].checked) {
-             category.push(chks[i].value);
-         }
-     }
-     var createYourOwn = document.getElementById("chkYourOwn").value
-      if (createYourOwn !== null) {
-        category.push(createYourOwn)
-      }
+    const season = document.querySelector(".post-season").value;
+    const difficulty = document.querySelector(".post-difficulty").value
+    //  var category = new Array();
+    //  var tblFruits = document.getElementById("tblFruits");
+    //  var chks = tblFruits.getElementsByTagName("INPUT");
+    //  for (var i = 0; i < chks.length; i++) {
+    //      if (chks[i].checked) {
+    //          category.push(chks[i].value);
+    //      }
+    //  }
+     const category = document.getElementById("chkYourOwn").value
 
-    if (name && location && zip && date_been_there && season && difficulty) {
+
+    if (name && location && zipcode && date_been_there && season && difficulty) {
 
     const response = await fetch(`/api/trail`, {
       method: 'POST',
       body: JSON.stringify({
         name,
         location,
-        zip,
+        zipcode,
         date_been_there,
         category,
         season,
@@ -65,7 +63,6 @@ async function newFormHandler(event) {
                   }
                   form.classList.add('was-validated');
                   event.preventDefault();
-                  rex();
                   newFormHandler(event)
                 }, false);
               });

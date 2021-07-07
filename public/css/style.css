@@ -37,14 +37,29 @@ h2 {
 
 button {
   background-color: var(--spring);
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px #999;
+}
+
+button:hover {
+  background-color: var(--background);
+  color: white;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2pxs #666;
+  transform: translateY(2px);
 }
 
 .title {
   background-color: var(--trail);
-}
-
-button {
-  background-color: var(--spring);
 }
 
 ul {
@@ -124,14 +139,18 @@ a:visited {
   text-align: right;
 }
 
-.td.checkwrap {
-  display: inline-block;
-  width: 100px;
-  text-align: right;
+.check {
+  text-align: left;
 }
 
 /* homepage specific */
 
 .button.btn-add {
   background-color: var(--spring);
+}
+
+/* login page */
+
+.button.button-login {
+  background-color: var(--summer);
 }
