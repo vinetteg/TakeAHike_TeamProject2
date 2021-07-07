@@ -30,7 +30,7 @@ Trail.init(
     },
     image_source: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     category: {
       type: DataTypes.STRING,

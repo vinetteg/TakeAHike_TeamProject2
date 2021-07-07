@@ -16,11 +16,11 @@ const seedDatabase = async () => {
     await seedUser();
     console.log('\n----- USER SEEDED -----\n');
 
-    // await seedUserTrail();
+    await seedUserTrail();
     console.log('\n----- USER TRAIL SEEDED -----\n');
     
 
-    // await seedTrailComment();
+    await seedTrailComment();
     console.log('\n----- USER TRAIL SEEDED -----\n');
     
     // const user = await User.bulkCreate(userData, {
