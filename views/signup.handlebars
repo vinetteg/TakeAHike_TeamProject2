@@ -1,33 +1,59 @@
 <div class="column">
-  <h2 class="title pb-4">Create A New Account</h2>
-  <hr />
-  <form class="signup-form">
-    <div>
-      <label for="username-signup">Name:</label>
-      <input class type="text" id="username-signup" placeholder="Hiker" />
+<h2 class="title">Create A New Account</h2>
+<hr />
+    <form class="signup-form needs-validation" novalidate>
+      <div class="inputwrap">
+    <label for="name-signup">Name:</label>
+    <input
+    type="text"
+    placeholder="e.g. John Hiker"
+    id="name-signup"
+    class="form-control"
+    required
+    />
     </div>
-    <div>
-      <label for="email-signup">Email:</label>
+
+    <div class="inputwrap">
+    <label for="email-signup">Email:</label>
+    <input
+    type="text"
+    placeholder="e.g.john@takeahike.com"
+    id="email-signup"
+    class="form-control"
+    required
+    />
+    </div>
+
+    <div class="inputwrap">
+      <label for="password-signup">Password:</label>
       <input
-        class="email-signup"
-        type="text"
-        id="email-signup"
-        placeholder="hiker@takeahike.com"
+        type="password"
+        placeholder="Create password"
+        id="password-signup"
+        class="form-control"
+        required
       />
     </div>
-    <div>
-      <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" placeholder="Password" />
-    </div>
-    <div>
-      <label for="password2-signup">Confirm password:</label>
-      <input type="password" id="password2-signup" placeholder="Re-type password" />
-    </div>
-    <div>
-      <button class="button is-primary" type="submit">Signup</button>
-    </div>
-  </form>
-</div>
 
+      <div class="inputwrap">
+      <label for="password-confirm">Confirm password:</label>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        id="confirm_password"
+        class="form-control"
+        required
+      />
+      <div class="invalid-feedback">
+        Password needs to match and should not be empty!!!
+      </div>
+
+    <div>
+      <button type="submit" class="button">
+        Create Account
+      </button>
+    </div>
+    </form>
+</div>
 <!-- javascript file-->
-<script src="./js/signup.js"></script>
+<script src="js/signup.js"></script>

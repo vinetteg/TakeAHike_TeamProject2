@@ -17,10 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/public/css/animista.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
+      <div class="tracking-in-expand">
       <a class="navbar-brand" href="#">Take A Hike</a>
       <button
         class="navbar-toggler"
@@ -32,7 +34,7 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button></div>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -84,13 +86,12 @@
           <div class="card-body text-center">
 
 
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4" id="img_holder">
+            <div class="card mb-3" style="max-width: 1000px">
+                <div class="col-md-4" style="max-width: 1000px" id="img_holder">
                 </div>
 
                 <div class="col-md-8">
-                  <div class="card-body-winter">
+                  <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text">{{location}}</p>
                     <ul class="list-group list-group-flush">
@@ -120,7 +121,7 @@
               </div>
             </div>
           </div>
-        </div>
+
       </a>
         <div class="">
           <b>{{user.username}}</b> {{format_date created_date}} |
@@ -164,14 +165,14 @@
       {{#if logged_in}}
       <form class="comment-form needs-validation" novalidate>
         <div>
-          <textarea class="comment-textarea form-control" name="comment-body" required></textarea>
+          <textarea class="comment-textarea form-control" placeholder="e.g. I enjoyed this hike because..." name="comment-body" required></textarea>
           <div class="invalid-feedback">
             Can't send an empty comment!
           </div>
         </div>
 
         <div>
-          <button class="button-add-comment" type="submit">add comment</button>
+          <button class="button-add-comment"  type="submit">Add Comment</button>
         </div>
       </form>
       {{/if}}

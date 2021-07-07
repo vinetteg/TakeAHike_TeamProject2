@@ -12,14 +12,16 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/public/css/animista.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
+          <div class="tracking-in-expand">
             <a class="navbar-brand" href="#">Take A Hike</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
+            </button></div>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
@@ -58,8 +60,8 @@
             <div class="col">
                    <div class="card-body text-center">
 
-                   <div class="card-header bg-info text-white">
-                     <ul class="nav nav-tabs card-header-tabs bg-info text-white">
+                   <div class="card-header">
+                     <ul class="nav nav-tabs card-header-tabs">
 
                        <li class="nav-item">
                          <a class="nav-link active" href="./singlepost-comment.html">Hike</a>
@@ -95,7 +97,7 @@
                                <div class="form-group mb-2">
                                  <input type="hikeinput" class="form-control" id="inputHike" placeholder="Hike Comment">
                                </div>
-                               <button type="submit" class="btn btn-info mb-2" >Add Comment</button>
+                               <button type="submit" class="btn-add" >Add Comment</button>
                              </form></li>
 
                            </ul>

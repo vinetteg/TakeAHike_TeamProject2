@@ -1,14 +1,15 @@
 :root {
-  --winter: #74a3d2;
-  --spring: #608032;
-  --summer: #d48824;
-  --autumn: #b5651d;
-  --background: #e8f5ff;
+  --winter: #a5b5c2;
+  --spring: #508aac;
+  --summer: #0e6464;
+  --autumn: #289ccc;
+  --background: #3f5825;
+  --trail: #bed9ef;
 }
 
 main {
   font-family: "Source Sans Pro", sans-serif;
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 
 form {
@@ -26,12 +27,8 @@ label {
   text-align: center;
 }
 
-button {
-  justify-content: center;
-}
-
 section {
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 h2 {
   justify-content: center;
@@ -43,46 +40,44 @@ button {
 }
 
 .title {
-  background-color: var(--background);
+  background-color: var(--trail);
 }
 
-.create-hike {
-  text-align: center;
-  font-family: "Source Sans Pro", sans-serif;
+button {
+  background-color: var(--spring);
 }
 
-.submit-button {
-  justify-content: center;
-  align-items: center;
-  height: 30px;
+ul {
+  background-color: var(--spring);
 }
 
-.content-input {
-  border: 1px solid #000;
-  height: 100px;
-  width: 200px;
+/* Nav bar related - should be on every page */
+nav {
+  background-color: var(--trail);
+  color: white;
 }
 
-.hike-title.hike-input {
-  text-align: center;
-  resize: both;
-  overflow: scroll;
+.navbar-brand {
+  font-weight: bolder;
+  color: black;
+  font-size: larger;
 }
 
-.post-content.content-input {
-  text-align: center;
+a:link {
+  color: black;
 }
 
-.email-signup.email-signup {
-  border: 1px solid #000;
-  margin: 10px;
+a:visited {
+  color: var(--autumn);
 }
 
-.password-signup {
-  margin: 0 auto;
-  padding: 10px;
+.card {
+  background-color: var(--trail);
 }
 
+.navbar-nav {
+  background-color: var(--trail);
+}
 /* signup.handlebars */
 
 .input.text {
@@ -133,4 +128,10 @@ button {
   display: inline-block;
   width: 100px;
   text-align: right;
+}
+
+/* homepage specific */
+
+.button.btn-add {
+  background-color: var(--spring);
 }
