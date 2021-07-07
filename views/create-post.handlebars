@@ -1,72 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>homepage</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
+rel="stylesheet"
+/>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">Take A Hike</a>
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNavDropdown"
+aria-controls="navbarNavDropdown"
+aria-expanded="false"
+aria-label="Toggle navigation"
+>
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+
+{{#if loggedIn}}
+<li class="nav-item">
+<a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+</li>
+<li class="nav-item">
+<a  class="nav-link dashboard" href="./dashboard-mockup.html">Personal Dashboard</a>
+</li>
+<li class="nav-item">
+<a  class="nav-link create" href="./createPost-mockup.html">Create a post</a>
+</li>
+<li class="nav-item">
+<a class="nav-link logout" href="#">Logout</a>
+</li>
+
+{{else}}
+<li class="nav-item">
+<a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+</li>
+<li class="nav-item">
+<a  class="nav-link login" href="./login-mockup.html">Login</a>
+</li>
+{{/if}}
+</ul>
+</div>
+</nav>
+<main>
 <section>
-  <h2 class="title">Create A New Hiking Post</h2>
-  <hr />
-  <form class="needs-validation add-hike-form" novalidate>
-    <div>
-      <label for="post-name">Title:</label>
-      <input
-        class="input form-control post-title mb-3"
-        type="text"
-        id="post-title"
-        name="post-title"
-        placeholder="e.g. Mail Box Peak"
-        required
-      />
-      <div class="valid-feedback">Looks good!</div>
-    </div>
-    <div>
-      <label for="post-location">Location:</label>
-      <input
-        type="text"
-        class="form-control post-location mb-3"
-        id="post-location"
-        name="post-location"
-        placeholder="e.g. North Bend"
-        required
-      />
-      <div class="valid-feedback">Looks good!</div>
-    </div>
+<h2 class="title">Create A New Hiking Post</h2>
+<hr />
+<form class="needs-validation add-hike-form" novalidate>
+<div>
+<label for="post-name">Title:</label>
+<input
+class="input form-control post-title mb-3"
+type="text"
+id="post-title"
+name="post-title"
+placeholder="e.g. Mail Box Peak"
+required
+/>
+<div class="valid-feedback">Looks good!</div>
+</div>
+<div>
+<label for="post-location">Location:</label>
+<input
+type="text"
+class="form-control post-location mb-3"
+id="post-location"
+name="post-location"
+placeholder="e.g. North Bend"
+required
+/>
+<div class="valid-feedback">Looks good!</div>
+</div>
 
-    <div>
-      <label for="post-zip">Zip:</label>
-      <input
-        class="post-zip mb-3 form-control"
-        type="text"
-        id="post-zip"
-        name="post-zip"
-        placeholder="e.g. 99203"
-        required
-      />
-      <div class="invalid-feedback">Zip code needs to be 5 digits!</div>
-    </div>
+<div>
+<label for="post-zip">Zip:</label>
+<input
+class="post-zip mb-3 form-control"
+type="text"
+id="post-zip"
+name="post-zip"
+placeholder="e.g. 99203"
+required
+/>
+<div class="invalid-feedback">Zip code needs to be 5 digits!</div>
+</div>
 
-    <div>
-      <label for="post-date">Hiking Date:</label>
-      <input
-        type="date"
-        class="post-date mb-3 form-control"
-        id="post-date"
-        name="post-date"
-        required
-      />
-      <div class="invalid-feedback">Don't forget the date!</div>
-    </div>
+<div>
+<label for="post-date">Hiking Date:</label>
+<input
+type="date"
+class="post-date mb-3 form-control"
+id="post-date"
+name="post-date"
+required
+/>
+<div class="invalid-feedback">Don't forget the date!</div>
+</div>
 
-    <div>
-      <select
-        class="mb-3 form-select post-season form-control"
-        multiple
-        aria-label="season select"
-        required
-      >
-        <option value="all season" selected>Select the season</option>
-        <option value="spring">🌺 Spring</option>
-        <option value="summer">🌞 Summer</option>
-        <option value="autumn">🍁 Autumn</option>
-        <option value="winter">☃️ Winter</option>
-      </select>
-    </div>
+<div>
+<select
+class="mb-3 form-select post-season form-control"
+multiple
+aria-label="season select"
+required
+>
+<option value="all season" selected>Select the season</option>
+<option value="spring">🌺 Spring</option>
+<option value="summer">🌞 Summer</option>
+<option value="autumn">🍁 Autumn</option>
+<option value="winter">☃️ Winter</option>
+</select>
+</div>
 
+<<<<<<< HEAD
     <div>
       <div>
         <select
@@ -135,6 +201,108 @@
     <button type="submit" class="submit create_btn">Create post</button>
   </form>
   </div>
-</section>
+=======
+<div>
+<div>
+<select
+class="mb-3 form-select post-difficulty form-control"
+aria-label="level select"
+required
+>
+<option value="n/a" selected>
+Select the difficulty level
+</option>
+<option value="family-friendly">family-friendly</option>
+<option value="moderate">moderate</option>
+<option value="hard">hard</option>
+<option value="professional">professional</option>
+</select>
+</div>
+</div>
 
+<table id="tblFruits">
+<tr>
+<td class="checkwrap">
+<input
+id="chkmountain"
+type="checkbox"
+value="mountain"
+/><label for="chkmountain">Mountain</label>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chk360" type="checkbox" value="360 view" /><label
+for="chk360"
+>360 View</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkLake" type="checkbox" value="lake" /><label
+for="chkLake"
+>Lake</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkBeach" type="checkbox" value="beach" /><label
+for="chkBeach"
+>Beach</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkCanyon" type="checkbox" value="canyon" /><label
+for="chkCanyon"
+>Canyon</label
+>
+</td>
+</tr>
+<tr>
+<td>
+<input
+id="chkYourOwn"
+type="text"
+placeholder="create your own tag"
+/><label for="chkYourOwn"></label>
+</td>
+</tr>
+</table>
+<br />
+<button type="submit" class="submit create_btn">Create post</button>
+</form>
+>>>>>>> cd9ab8939bd4833a886bb194ebfb26cc900a188d
+</section>
+</main>
+
+<footer class="footer rows pb-2">
+<div class="row-is-full content has-text-centered">
+<p>
+<a href="/">homepage</a>{{#if loggedIn}} |
+<a href="/dashboard/">dashboard</a> |
+<a href="/dashboard/create/">create new post</a>
+{{else}} | <a href="/login/">login</a>
+{{/if}}
+</p>
+</div>
+</footer>
+
+{{#if loggedIn}}
+<script src="../../public/javascript/logout.js"></script>
+{{/if}}
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"
+></script>
+<script
+defer
+src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+></script>
 <script src="../public/javascript/add-hike.js"></script>
+</body>
+</html>

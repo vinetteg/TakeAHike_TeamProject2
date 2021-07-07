@@ -23,7 +23,7 @@ TrailComment.init(
       autoIncrement: true,
     },
     comment: {
-      type: DataTypes.STRING(1234),
+      type: DataTypes.STRING(600),
       allowNull: false,
     },
     trail_id: {

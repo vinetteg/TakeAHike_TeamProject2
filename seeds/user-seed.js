@@ -7,7 +7,6 @@ const userData = [
         password: 'password',
         access_level: 1,
         date_created: '2021-06-10',
-        trails_id: 3
     },
     {
         name: 'vinette',
@@ -15,7 +14,6 @@ const userData = [
         password: 'password',
         access_level: 1,
         date_created: '2021-06-22',
-        trails_id: 1
     },
     {
         name: 'rex',
@@ -23,7 +21,6 @@ const userData = [
         password: 'password',
         access_level: 1,
         date_created: '2021-06-22',
-        trails_id: 1
     },
     {
         name: 'matt',
@@ -31,7 +28,6 @@ const userData = [
         password: 'matt',
         access_level: 1,
         date_created: '2021-06-22',
-        trails_id: 1
     },
 ];
 
