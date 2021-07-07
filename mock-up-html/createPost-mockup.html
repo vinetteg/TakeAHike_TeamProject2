@@ -17,22 +17,25 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/public/css/animista.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
   </head>
   <body>
     <nav class="navbar">
-      <a class="navbar-brand" href="#">Take A Hike</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="tracking-in-expand">
+        <a class="navbar-brand" href="#">Take A Hike</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -157,19 +160,19 @@
             </div>
           </div>
 
+          <div class ="check">
           <table id="tblFruits">
             <tr>
               <td class="checkwrap">
-                <input
-                  id="chkmountain"
-                  type="checkbox"
-                  value="mountain"
-                /><label for="chkmountain">Mountain</label>
+                <input id="chk" type="checkbox" value="mountain" /><label
+                  for="chkmountain"
+                  >Mountain</label
+                >
               </td>
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chk360" type="checkbox" value="360 view" /><label
+                <input id="chk" type="checkbox" value="360 view" /><label
                   for="chk360"
                   >360 View</label
                 >
@@ -177,7 +180,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkLake" type="checkbox" value="lake" /><label
+                <input id="chk" type="checkbox" value="lake" /><label
                   for="chkLake"
                   >Lake</label
                 >
@@ -185,7 +188,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkBeach" type="checkbox" value="beach" /><label
+                <input id="chk" type="checkbox" value="beach" /><label
                   for="chkBeach"
                   >Beach</label
                 >
@@ -193,7 +196,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkCanyon" type="checkbox" value="canyon" /><label
+                <input id="chk" type="checkbox" value="canyon" /><label
                   for="chkCanyon"
                   >Canyon</label
                 >
@@ -212,6 +215,7 @@
           <br />
           <button type="submit" class="submit create_btn">Create post</button>
         </form>
+      </div>
       </section>
     </main>
 
