@@ -135,7 +135,7 @@
     <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
         <p>
-          <a href="/">homepage</a>{{#if loggedIn}} |
+          <a href="/">homepage</a>{{#if logged_in}} |
           <a href="/dashboard/">dashboard</a> |
           <a href="/dashboard/create/">create new post</a>
           {{else}} | <a href="/login/">login</a>
@@ -144,7 +144,7 @@
       </div>
     </footer>
 
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <script src="../public/javascript/logout.js"></script>
     {{/if}}
     <script

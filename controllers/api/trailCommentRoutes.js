@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { UserTrail, User, Trail } = require('../../models');
+const { TrailComment, User, Trail } = require('../../models');
 
 
 // GET all hike
 router.get('/', async (req, res) => {
   try {
-    const trailData = await UserTrail.findAll();
-    res.status(200).json(trailData);
+    const trailCommentData = await TrailComment.findAll();
+    res.status(200).json(trailCommentData);
 
   } catch (err) {
     res.status(500).json(err);
@@ -17,15 +17,15 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     console.log(' Try to Find One Hike by ID');
-    const trailData = await UserTrail.findByPk(req.params.id, {
+    const trailCommentData = await TrailComment.findByPk(req.params.id, {
     });
 
-    if (!trailData) {
+    if (!trailCommentData) {
       res.status(404).json({ message: 'No hike found' });
       return;
     }
     console.log('Find One Hike by ID');
-    res.status(200).json(trailData);
+    res.status(200).json(trailCommentData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
 // CREATE a hike
 router.post('/', async (req, res) => {
   try {
-    const newTrail = await UserTrail.create({
+    const newTrail = await TrailComment.create({
       ...req.body
       // user_id: req.session.user_id,
     });
@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
-    const updateTrail = await UserTrail.update(req.body, {
+    const updateTrail = await TrailComment.update(req.body, {
        where: {
          id: req.params.id,
        },
@@ -67,19 +67,19 @@ router.put('/:id', async (req, res) => {
 // DELETE a hike
 router.delete('/:id', async (req, res) => {
   try {
-    const trailData = await UserTrail.destroy({
+    const trailCommentData = await TrailComment.destroy({
       where: {
         id: req.params.id,
         // user_id: req.session.user_id,
       },
     });
 
-    if (!trailData) {
+    if (!trailCommentData) {
       res.status(404).json({ message: 'No hike found with this id!' });
       return;
     }
 
-    res.status(200).json(trailData);
+    res.status(200).json(trailCommentData);
   } catch (err) {
     res.status(500).json(err);
   }

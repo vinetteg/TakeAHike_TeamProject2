@@ -2,8 +2,11 @@
       <div class="card">
         <div class="col">
           <div class="card-body text-center">
+<<<<<<< HEAD:views/partials/trail-info.handlebars
+=======
 
 
+>>>>>>> main:views/partial/trail-info.handlebars
             <div class="card mb-3" style="max-width: 1000px">
                 <div class="col-md-4"  style="max-width: 1000px" id="img_holder">
                 </div>
@@ -13,13 +16,13 @@
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text">{{location}}</p>
                     <ul class="list-group list-group-flush">
-                      <div id="zip" style="display: none;">{{zip}}</div>
+                      <div id="zip" style="display: none;">{{zipcode}}</div>
                       <li class="list-group-item">
                         Current weather:
-                        <span class="condition"> | </span>
-                        <span class="temp"> | </span>
-                        <span class="human"> | </span>
-                        <span class="wind"> | </span>
+                        <span class="condition"> | </span><br>
+                        <span class="temp"> | </span><br>
+                        <span class="human"> | </span><br>
+                        <span class="wind"> | </span><br>
                       </li>
                       <li class="list-group-item">
                         Difficulty: {{difficulty}}
@@ -41,6 +44,8 @@
           </div>
         </div>
       </a>
-        <div class="">
-          <b>{{user.username}}</b> {{format_date created_date}} |
-          <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    <div class="">
+  <b>{{user.username}}</b> {{format_date created_date}} |
+  <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+
+  <script src="javascript/main.js"></script>

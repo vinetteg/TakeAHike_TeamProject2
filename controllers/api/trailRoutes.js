@@ -32,11 +32,12 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// CREATE a hike
-router.post('/', async (req, res) => {
+
+// Create a new hike with Authentication
+router.post('/', withAuth, async (req, res) => {
   try {
     const newTrail = await Trail.create({
-      ...req.body
+      ...req.body,
       // user_id: req.session.user_id,
     });
 
@@ -47,36 +48,18 @@ router.post('/', async (req, res) => {
 });
 
 
-// UPDATE TRAIL BY VALUE
-router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
-  try {
-    const updateTrail = await Trail.update(req.body, {
-       where: {
-         id: req.params.id,
-       },
-      });
-      
-    if (!updateTrail[0]) {
-      res.status(404).json({message: 'No Trail with this id! '})
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// DELETE a hike
-router.delete('/:id', async (req, res) => {
+// Delete Trail with Authentication == If User has permissions.
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const trailData = await Trail.destroy({
       where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       },
     });
 
-    if (!trailData) {
-      res.status(404).json({ message: 'No hike found with this id!' });
+    if ( trailData) {
+      res.status(404).json({ message: 'No trail found with this id!' });
       return;
     }
 
@@ -85,5 +68,6 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
