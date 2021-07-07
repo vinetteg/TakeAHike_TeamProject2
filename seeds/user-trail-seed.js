@@ -1,28 +1,28 @@
-// const { UserTrail } = require('../models');
+const { UserTrail } = require('../models');
 
-// const userTrailData = [
-//     {
-//         user_id: 1,
-//         trail_id: 1,
-//     },
-//     {
-//         user_id: 1,
-//         trail_id: 2,
-//     },
-//     {
-//         user_id: 2,
-//         trail_id: 3,
-//     },
-//     {
-//         user_id: 2,
-//         trail_id: 4,
-//     },
-//     {
-//         user_id: 3,
-//         trail_id: 5,
-//     },
-// ];
+const userTrailData = [
+    {
+        user_id: 1,
+        trail_id: 1,
+    },
+    {
+        user_id: 1,
+        trail_id: 2,
+    },
+    {
+        user_id: 2,
+        trail_id: 3,
+    },
+    {
+        user_id: 2,
+        trail_id: 4,
+    },
+    {
+        user_id: 3,
+        trail_id: 5,
+    },
+];
 
-// const seedUserTrail = () => UserTrail.bulkCreate(userTrailData);
+const seedUserTrail = () => UserTrail.bulkCreate(userTrailData);
 
-// module.exports = seedUserTrail;
+module.exports = seedUserTrail;

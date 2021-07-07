@@ -47,31 +47,31 @@ router.get('/add-trail', (req, res) => {
       return;
     }
   
-    res.redirect('/');
+    res.redirect('/dashboard');
   });
   
 
-router.get('/trail/:id', async (req, res) => {
-    try {
-      const trailData = await Trail.findByPk(req.params.id, {
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-        ],
-      });
+// router.get('/trail/:id', async (req, res) => {
+//     try {
+//       const trailData = await Trail.findByPk(req.params.id, {
+//         include: [
+//           {
+//             model: User,
+//             attributes: ['name'],
+//           },
+//         ],
+//       });
+      
+//       const trail = trailData.get({ plain: true });
   
-      const trail = trailData.get({ plain: true });
-  
-      res.render('trail', {
-        ...trail,
-        logged_in: req.session.logged_in
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//       res.render('add-comment', {
+//         ...trail,
+//         logged_in: req.session.logged_in
+//       });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 // Add comment route, Once you select a hike you'll be able to make a comment
 router.get('/add-comment/:id', async (req, res) => {
@@ -100,7 +100,7 @@ try {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/profile');
+      res.redirect('/');
       return;
     }
   

@@ -24,13 +24,12 @@ Trail.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    comment: {
-      type: DataTypes.STRING,
+    zipcode: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     image_source: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     category: {
       type: DataTypes.STRING,

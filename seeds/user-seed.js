@@ -5,25 +5,21 @@ const userData = [
         name: 'chris A',
         email: 'chrisabiva@hotmail.com',
         password: 'password',
-        // access_level: 1
     },
     {
         name: 'vinette',
         email: 'vinette@hotmail.com',
         password: 'password',
-        // access_level: 1
     },
     {
         name: 'rex',
         email: 'rex@hotmail.com',
         password: 'password',
-        // access_level: 1
     },
     {
         name: 'matt',
         email: 'matt@hotmail.com',
         password: 'matt',
-        // access_level: 1
     },
 ];
 
