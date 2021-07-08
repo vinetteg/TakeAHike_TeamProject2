@@ -21,11 +21,17 @@ User will need to install Node JS by clicking the following link https://nodejs.
 Using their command line, the user will need to install the packages using the following commands
 
 Node Modules and JSON packages- 'npm install'
+
 Mysql- 'npm i mysql'
+
 Handlebars - 'npm i handlebars'
+
 Express - 'npm i express'
+
 Sequelize - 'npm i Sequelize'
+
 Helpers - 'npm i helpers'
+
 Routes - 'npm i routes'
 
 ## Usage
@@ -35,8 +41,11 @@ Once a user has created a profile they will be able to post hikes they have done
 ## Credit
 
 Chris Abiva - https://github.com/Chabivz
+
 Vinnette Gutierrez - https://github.com/vinetteg
+
 Matt Koski - https://github.com/mjkekai
+
 Rex Yu - https://github.com/yu19910513
 
 ## License
