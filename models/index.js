@@ -1,5 +1,6 @@
 const User = require('./User');
 const Trail = require('./Trail');
+
 const TrailComment = require('./TrailComment');
 
 //create associations
@@ -28,3 +29,4 @@ Trail.hasMany(TrailComment, {
 });
 
 module.exports = {User, Trail, TrailComment};
+
