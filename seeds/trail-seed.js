@@ -15,7 +15,7 @@ const trailData = [
     {
         name: 'Mailbox Peak',
         location: 'Snoqualmie',
-        zipcode: '98035',
+        zipcode: '98045',
         image_source: 'https://www.wta.org/site_images/hikes/mount-si_daniel.jpg/@@images/7becb07d-5903-430c-a681-21169c3ab274.jpeg',
         date_been_there: '2021-07-20',
         category: '360 View',
@@ -26,7 +26,7 @@ const trailData = [
     {
         name: 'Franklin Falls',
         location: 'Snoqualmie',
-        zipcode: '98067',
+        zipcode: '98065',
         image_source: 'https://www.wta.org/site_images/hikes/p6280069_pan.jpg/@@images/7c7da2fa-d2c8-4d05-b2a3-57becf72cd38.jpeg',
         date_been_there: '2021-01-05',
         category: 'Falls',
@@ -37,7 +37,7 @@ const trailData = [
     {
         name: 'Rattlesnake Ledge',
         location: 'Snoqualmie',
-        zipcode: '98003',
+        zipcode: '98045',
         image_source: 'https://static-15.sinclairstoryline.com/resources/media/65f14cc5-ac33-40e9-8cce-0ad266469250-smallScale_RYAN6833.jpg?1539396932081',
         date_been_there: '2014-08-10',
         category: 'Lake',
@@ -48,7 +48,7 @@ const trailData = [
     {
         name: 'Crater Lake',
         location: 'Oregon',
-        zipcode: '98012',
+        zipcode: '97604',
         image_source: 'https://pbs.twimg.com/media/CwJ0fRRWAAA0PD9.jpg',
         date_been_there: '2021-06-26',
         category: '360 View',
@@ -57,9 +57,9 @@ const trailData = [
         user_id: 4
     },
     {
-        name: 'Milford Track',
-        location: 'New Zealand',
-        zipcode: '98001',
+        name: 'Grand Canyon',
+        location: 'Arizona',
+        zipcode: '96023',
         image_source: 'https://live.staticflickr.com/3825/13319969495_5ebb03f93b_b.jpg',
         date_been_there: '2021-06-26',
         category: '360 View',
@@ -68,9 +68,9 @@ const trailData = [
         user_id: 4
     },
     {
-        name: 'Machu Pichu',
-        location: 'Peru',
-        zipcode: '98055',
+        name: 'Yellowstone',
+        location: 'Wyoming',
+        zipcode: '82190',
         image_source: 'https://www.planetware.com/wpimages/2020/03/best-hikes-in-the-world-machu-picchu-overview.jpg',
         date_been_there: '2021-06-26',
         category: '360 View',
@@ -79,9 +79,9 @@ const trailData = [
         user_id: 4
     },
     {
-        name: 'Torres del Paine W Trek',
-        location: 'Patagonia',
-        zipcode: '98055',
+        name: 'Mt Pilchuck',
+        location: 'Verlot',
+        zipcode: '98252',
         image_source: 'https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/torres-del-paine-w-trek-1549014923-785X440.jpg',
         date_been_there: '2015-02-26',
         category: 'Mountain',

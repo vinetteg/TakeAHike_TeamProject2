@@ -1,4 +1,4 @@
-<a class="nav-link active" href="/trail/{{id}}">
+<a class="nav-link active"  href="/trail/{{id}}" >
       <div class="card">
         <div class="col">
           <div class="card-body text-center">
@@ -28,11 +28,7 @@
                       <li class="list-group-item">
                         Best season to hike: {{season}}
                       </li>
-                      <li class="list-group-item">
-                        <form class="form-inline">
-
-                        </form>
-                      </li>
+                   
                     </ul>
                   </div>
                 </div>
@@ -41,8 +37,28 @@
           </div>
         </div>
       </a>
-        <div class="">
+        
           <b>{{user.name}}</b>|
           <a href="/trail/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+
+
+
+<a href="/trail/{{id}}">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{location}}</p>
+          <p>Current Weather<span class="condition"> | </span><br>
+                        <span class="temp"> | </span><br>
+                        <span class="human"> | </span><br>
+                        <span class="wind"> | </span>
+           </p>
+           <a>Difficulty: {{difficulty}}</a>
+      </div>
+    </div>
+  </div>
+</a>
 
 <script src="javascript/main.js"></script>
