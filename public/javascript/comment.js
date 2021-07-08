@@ -1,24 +1,24 @@
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    const trailComment = document.querySelector(".comment-textarea").value.trim();
+    const comment = document.querySelector(".comment-textarea").value.trim();
 
     const trails_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
 
-    if (trailComment) {
+    if (comment) {
         const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
             trails_id,
-            trailComment
+            comment
           }),
           headers: {
             'Content-Type': 'application/json'
           }
         });
-          console.log(trailComment);
+          console.log(comment);
         if (response.ok) {
           document.location.reload();//***** */
         } else {
