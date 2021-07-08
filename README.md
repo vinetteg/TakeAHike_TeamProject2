@@ -55,7 +55,9 @@ MIT
 ## Media
 
 Wireframe
-![wireframe_takeahike](https://user-images.githubusercontent.com/78839909/124989914-874e4500-dff4-11eb-9372-54e7ca86fbad.jpg)
+
+![wireframe_takeahike](https://user-images.githubusercontent.com/78839909/124990126-cda3a400-dff4-11eb-93dc-63fb893fefaf.jpg)
+
 
 
 ## Links
