@@ -29,7 +29,7 @@ TrailComment.init(
       },
       comment: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       }
   },
   {

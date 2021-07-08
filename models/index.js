@@ -16,7 +16,7 @@ TrailComment.belongsTo(User, {
   });
 
 TrailComment.belongsTo(Trail, {
-    foreignKey: 'trail_id'
+    foreignKey: 'trails_id'
 });
 
 User.hasMany(TrailComment, {
@@ -24,7 +24,7 @@ User.hasMany(TrailComment, {
 });
 
 Trail.hasMany(TrailComment, {
-    foreignKey: 'trail_id'
+    foreignKey: 'trails_id'
 });
 
 module.exports = {User, Trail, TrailComment};

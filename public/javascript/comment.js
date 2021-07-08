@@ -20,9 +20,9 @@ async function commentFormHandler(event) {
         });
           console.log(comment);
         if (response.ok) {
-          document.location.reload();//***** */
+          document.location.reload();
         } else {
-          alert(response.statusText);
+          document.location.reload();
         }
       }
   }
