@@ -1,8 +1,8 @@
 <div>
 
-<h2 class="title">Dashboard: Your Trails</h2><hr>
+<h2 class="title text-light bg-primary">Personal Dashboard: Your Trails</h2><hr>
 {{#if trails.length}}
-    <div>
+    <div class="">
     {{#each trails as |trail|}}
         {{> trail-info trail}}
     {{/each}}
