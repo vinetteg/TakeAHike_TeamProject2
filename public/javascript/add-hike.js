@@ -4,6 +4,7 @@ async function newFormHandler(event) {
     const name = document.querySelector("#post-title").value;
     const location = document.querySelector("#post-location").value
     const zipcode = document.querySelector("#post-zip").value
+
     const date_been_there = document.querySelector("#post-date").value
     const season = document.querySelector(".post-season").value;
     const difficulty = document.querySelector(".post-difficulty").value
@@ -20,13 +21,16 @@ async function newFormHandler(event) {
 
     if (name && location && zipcode && date_been_there && season && difficulty) {
 
-    const response = await fetch(`/api/trail`, {
+
+    const response = await fetch('/api/trails', {
       method: 'POST',
       body: JSON.stringify({
         name,
         location,
+
         zipcode,
         date_been_there,
+
         category,
         season,
         difficulty
@@ -42,11 +46,12 @@ async function newFormHandler(event) {
 
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
+
 
 
 (function() {
@@ -121,3 +126,4 @@ async function newFormHandler(event) {
 
 
   }
+

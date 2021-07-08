@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 // create our Trail model
 class Trail extends Model {}
 
+
 // create fields/columns for Trail model
 Trail.init(
     {

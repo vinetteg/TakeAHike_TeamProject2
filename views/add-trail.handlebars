@@ -1,0 +1,147 @@
+<main>
+<section>
+<h2 class="title">Create A New Hiking Post</h2>
+<hr />
+<form class="needs-validation add-hike-form" novalidate>
+<div>
+<label for="post-name">Title:</label>
+<input
+class="input form-control post-title mb-3"
+type="text"
+id="post-title"
+name="post-title"
+placeholder="e.g. Mail Box Peak"
+required
+/>
+<div class="valid-feedback">Looks good!</div>
+</div>
+<div>
+<label for="post-location">Location:</label>
+<input
+type="text"
+class="form-control post-location mb-3"
+id="post-location"
+name="post-location"
+placeholder="e.g. North Bend"
+required
+/>
+<div class="valid-feedback">Looks good!</div>
+</div>
+
+<div>
+<label for="post-zip">Zip:</label>
+<input
+class="post-zip mb-3 form-control"
+type="text"
+id="post-zip"
+name="post-zip"
+placeholder="e.g. 99203"
+required
+/>
+<div class="invalid-feedback">Zip code needs to be 5 digits!</div>
+</div>
+
+<div>
+<label for="post-date">Hiking Date:</label>
+<input
+type="date"
+class="post-date mb-3 form-control"
+id="post-date"
+name="post-date"
+required
+/>
+<div class="invalid-feedback">Don't forget the date!</div>
+</div>
+
+<div>
+<select
+class="mb-3 form-select post-season form-control"
+multiple
+aria-label="season select"
+required
+>
+<option value="all season" selected>Select the season</option>
+<option value="spring">🌺 Spring</option>
+<option value="summer">🌞 Summer</option>
+<option value="autumn">🍁 Autumn</option>
+<option value="winter">☃️ Winter</option>
+</select>
+</div>
+
+<div>
+<div>
+<select
+class="mb-3 form-select post-difficulty form-control"
+aria-label="level select"
+required
+>
+<option value="n/a" selected>
+Select the difficulty level
+</option>
+<option value="family-friendly">family-friendly</option>
+<option value="moderate">moderate</option>
+<option value="hard">hard</option>
+<option value="professional">professional</option>
+</select>
+</div>
+</div>
+
+<table id="tblFruits">
+<tr>
+<td class="checkwrap">
+<input
+id="chkmountain"
+type="checkbox"
+value="mountain"
+/><label for="chkmountain">Mountain</label>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chk360" type="checkbox" value="360 view" /><label
+for="chk360"
+>360 View</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkLake" type="checkbox" value="lake" /><label
+for="chkLake"
+>Lake</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkBeach" type="checkbox" value="beach" /><label
+for="chkBeach"
+>Beach</label
+>
+</td>
+</tr>
+<tr>
+<td class="checkwrap">
+<input id="chkCanyon" type="checkbox" value="canyon" /><label
+for="chkCanyon"
+>Canyon</label
+>
+</td>
+</tr>
+<tr>
+<td>
+<input
+id="chkYourOwn"
+type="text"
+placeholder="create your own tag"
+/><label for="chkYourOwn"></label>
+</td>
+</tr>
+</table>
+<br />
+<button type="submit" class="submit create_btn">Create post</button>
+</form>
+</section>
+</main>
+
+<script src="javascript/add-hike.js"></script>
