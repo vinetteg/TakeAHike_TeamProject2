@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "jquery": "^3.6.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.4",
     "routes": "^2.1.0",
     "sequelize": "^6.6.4"
   }

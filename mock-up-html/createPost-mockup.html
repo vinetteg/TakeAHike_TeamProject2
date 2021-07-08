@@ -17,51 +17,61 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/public/css/animista.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Take A Hike</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar">
+      <div class="tracking-in-expand">
+        <a class="navbar-brand" href="#">Take A Hike</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
+          {{#if loggedIn}}
+          <li class="nav-item">
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dashboard" href="./dashboard-mockup.html"
+              >Personal Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link create" href="./createPost-mockup.html"
+              >Create a post</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logout" href="#">Logout</a>
+          </li>
 
-                {{#if loggedIn}}
-                <li class="nav-item">
-                  <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
-                </li>
-                <li class="nav-item">
-                  <a  class="nav-link dashboard" href="./dashboard-mockup.html">Personal Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a  class="nav-link create" href="./createPost-mockup.html">Create a post</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link logout" href="#">Logout</a>
-                </li>
-
-                {{else}}
-                <li class="nav-item">
-                    <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
-                  </li>
-                <li class="nav-item">
-                    <a  class="nav-link login" href="./login-mockup.html">Login</a>
-                  </li>
-                  {{/if}}
-              </ul>
-            </div>
-          </nav>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link login" href="./login-mockup.html">Login</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
     <main>
       <section>
         <h2 class="title">Create A New Hiking Post</h2>
@@ -150,19 +160,19 @@
             </div>
           </div>
 
+          <div class ="check">
           <table id="tblFruits">
             <tr>
               <td class="checkwrap">
-                <input
-                  id="chkmountain"
-                  type="checkbox"
-                  value="mountain"
-                /><label for="chkmountain">Mountain</label>
+                <input id="chk" type="checkbox" value="mountain" /><label
+                  for="chkmountain"
+                  >Mountain</label
+                >
               </td>
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chk360" type="checkbox" value="360 view" /><label
+                <input id="chk" type="checkbox" value="360 view" /><label
                   for="chk360"
                   >360 View</label
                 >
@@ -170,7 +180,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkLake" type="checkbox" value="lake" /><label
+                <input id="chk" type="checkbox" value="lake" /><label
                   for="chkLake"
                   >Lake</label
                 >
@@ -178,7 +188,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkBeach" type="checkbox" value="beach" /><label
+                <input id="chk" type="checkbox" value="beach" /><label
                   for="chkBeach"
                   >Beach</label
                 >
@@ -186,7 +196,7 @@
             </tr>
             <tr>
               <td class="checkwrap">
-                <input id="chkCanyon" type="checkbox" value="canyon" /><label
+                <input id="chk" type="checkbox" value="canyon" /><label
                   for="chkCanyon"
                   >Canyon</label
                 >
@@ -205,6 +215,7 @@
           <br />
           <button type="submit" class="submit create_btn">Create post</button>
         </form>
+      </div>
       </section>
     </main>
 

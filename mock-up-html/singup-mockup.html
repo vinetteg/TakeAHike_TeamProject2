@@ -17,10 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/public/css/animista.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
+      <div class="tracking-in-expand">
       <a class="navbar-brand" href="#">Take A Hike</a>
       <button
         class="navbar-toggler"
@@ -30,7 +32,7 @@
         aria-controls="navbarNavDropdown"
         aria-expanded="false"
         aria-label="Toggle navigation"
-      >
+      ></div>
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -38,15 +40,17 @@
         <ul class="navbar-nav">
           {{#if loggedIn}}
           <li class="nav-item">
-            <a  class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
           </li>
           <li class="nav-item">
-            <a  class="nav-link dashboard" href="./dashboard-mockup.html"
+            <a class="nav-link dashboard" href="./dashboard-mockup.html"
               >Personal Dashboard</a
             >
           </li>
           <li class="nav-item">
-            <a  class="nav-link create" href="./createPost-mockup.html"
+            <a class="nav-link create" href="./createPost-mockup.html"
               >Create a post</a
             >
           </li>
@@ -56,10 +60,12 @@
 
           {{else}}
           <li class="nav-item">
-            <a class="nav-link homepage" href="./homepage-mockup.html">Homepage</a>
+            <a class="nav-link homepage" href="./homepage-mockup.html"
+              >Homepage</a
+            >
           </li>
           <li class="nav-item">
-            <a  class="nav-link login" href="./login-mockup.html">Login</a>
+            <a class="nav-link login" href="./login-mockup.html">Login</a>
           </li>
           {{/if}}
         </ul>
@@ -96,6 +102,7 @@
             <label for="password-signup">Password:</label>
             <input
               type="password"
+              placeholder="Create password"
               id="password-signup"
               class="form-control"
               required
@@ -116,12 +123,9 @@
             </div>
           </div>
 
-          <div>
-            <button
-              type="submit"
-              class="button is-primary pure-button pure-button-primary"
-            >
-              signup
+          <div class="">
+            <button type="submit" class="button">
+              Create Account
             </button>
           </div>
         </form>

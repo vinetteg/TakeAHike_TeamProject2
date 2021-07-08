@@ -1,0 +1,156 @@
+:root {
+  --winter: #a5b5c2;
+  --spring: #508aac;
+  --summer: #0e6464;
+  --autumn: #289ccc;
+  --background: #3f5825;
+  --trail: #bed9ef;
+}
+
+main {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--trail);
+}
+
+form {
+  text-align: center;
+  justify-content: center;
+  margin: 5px 5px 5px 5px;
+}
+
+div {
+  margin: 10px 10px 10px 10px;
+}
+
+label {
+  font-weight: bold;
+  text-align: center;
+}
+
+section {
+  background-color: var(--trail);
+}
+h2 {
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  background-color: var(--spring);
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px #999;
+}
+
+button:hover {
+  background-color: var(--background);
+  color: white;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2pxs #666;
+  transform: translateY(2px);
+}
+
+.title {
+  background-color: var(--trail);
+}
+
+ul {
+  background-color: var(--spring);
+}
+
+/* Nav bar related - should be on every page */
+nav {
+  background-color: var(--trail);
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  color: black;
+  font-size: larger;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: var(--autumn);
+}
+
+.card {
+  background-color: var(--trail);
+}
+
+.navbar-nav {
+  background-color: var(--trail);
+}
+/* signup.handlebars */
+
+.input.text {
+  top: 0px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+  float: left;
+  display: inline-block;
+  clear: left;
+  width: 150px;
+  text-align: right;
+}
+
+.inputwrap.label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+/* createPost */
+
+.input.checkbox {
+  top: 0px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+  float: left;
+  display: inline-block;
+  clear: left;
+  width: 150px;
+  text-align: right;
+}
+
+.check {
+  text-align: left;
+}
+
+/* homepage specific */
+
+.button.btn-add {
+  background-color: var(--spring);
+}
+
+/* login page */
+
+.button.button-login {
+  background-color: var(--summer);
+}

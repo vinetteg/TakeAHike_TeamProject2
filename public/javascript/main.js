@@ -74,7 +74,7 @@ function images(data) {
         return response.json();
       })
       .then(function (data_img) {
-          console.log(data_img.hits[10].webformatURL);
+          console.log(data_img.hits[0].webformatURL);
       var img = document.createElement('img');
       img.src = data_img.hits[0].webformatURL;
       document.getElementById('img_holder').appendChild(img);
