@@ -62,7 +62,6 @@ async function newFormHandler(event) {
                     event.stopPropagation();
                   }
                   form.classList.add('was-validated');
-                  event.preventDefault();
                   newFormHandler(event)
                 }, false);
               });
