@@ -2,6 +2,17 @@ const { Trail } = require('../models');
 
 const trailData = [
     {
+        name: 'Crater Lake',
+        location: 'Oregon',
+        zipcode: '97604',
+        image_source: 'https://pbs.twimg.com/media/CwJ0fRRWAAA0PD9.jpg',
+        date_been_there: '2021-06-26',
+        category: '360 View',
+        season: 'Autums',
+        difficulty: 'Medium',
+        user_id: 4
+    },
+    {
         name: 'Poo Poo Point',
         location: 'Chrico Trail',
         zipcode: '98027',
@@ -45,17 +56,7 @@ const trailData = [
         difficulty: 'Medium',
         user_id: 3
     },
-    {
-        name: 'Crater Lake',
-        location: 'Oregon',
-        zipcode: '97604',
-        image_source: 'https://pbs.twimg.com/media/CwJ0fRRWAAA0PD9.jpg',
-        date_been_there: '2021-06-26',
-        category: '360 View',
-        season: 'Autums',
-        difficulty: 'Medium',
-        user_id: 4
-    },
+    
     {
         name: 'Grand Canyon',
         location: 'Arizona',

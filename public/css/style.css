@@ -154,3 +154,22 @@ a:visited {
 .button.button-login {
   background-color: var(--summer);
 }
+
+
+
+/* -------------------------------- Flexbox -------------------------------- */
+/* Dashboard Handlebars */
+.dashboard-container {
+
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  flex-wrap: flex;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+
