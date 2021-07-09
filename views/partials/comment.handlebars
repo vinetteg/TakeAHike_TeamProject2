@@ -9,5 +9,8 @@
     </div>
   </section>
   {{/each}}
+   <b>{{user.name}}</b>|
+                        <a href="/trail/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
 </div>
-<script src="javascript/comment.js"></script>
+
+<script src="/javascript/comment.js"></script>

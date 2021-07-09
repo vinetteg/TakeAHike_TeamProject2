@@ -16,7 +16,8 @@ async function commentFormHandler(event) {
           }),
           headers: {
             'Content-Type': 'application/json'
-          }
+          },
+          order: [['id', 'DESC']],
         });
           console.log(comment);
         if (response.ok) {
@@ -26,8 +27,7 @@ async function commentFormHandler(event) {
         }
       }
   }
-
-
+  
   (function() {
     'use strict';
     window.addEventListener('load', function() {
