@@ -23,7 +23,7 @@ async function signupFormHandler(event) {
           date_created
         }),
         headers: { 'Content-Type': 'application/json' }
-      });x
+      });
       //  console.log(email, password, name, access_level, date_created);
 
       // check the response status
