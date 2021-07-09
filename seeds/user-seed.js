@@ -29,11 +29,13 @@ const userData = [
         access_level: 1,
         date_created: '2021-06-22'
     },
-        {name: 'Josephine',
+    {
+        name: 'Josephine',
         email: 'josie@hotmail.com',
         password: 'jose',
         access_level: 1,
-        date_created: '2021-06-22'}
+        date_created: '2021-06-22'
+    }
 ];
 
 const seedUser = () => User.bulkCreate(userData);
