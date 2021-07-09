@@ -23,7 +23,7 @@ async function signupFormHandler(event) {
           date_created
         }),
         headers: { 'Content-Type': 'application/json' }
-      });
+      });x
       //  console.log(email, password, name, access_level, date_created);
 
       // check the response status
@@ -57,8 +57,8 @@ async function signupFormHandler(event) {
 })();
 
 
-var password = document.getElementById("password-signup")
-  , confirm_password = document.getElementById("confirm_password");
+var password = document.getElementById("password-signup");
+var confirm_password = document.getElementById("confirm_password");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
