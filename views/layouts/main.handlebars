@@ -59,29 +59,24 @@
 
           {{else}}
             <li class="nav-item">
-<<<<<<< HEAD
               <a href="/" class="nav-link homepage" >Homepage</a>
             </li>
             <li class="nav-item">
               <a href="/login" class="nav-link login">Login</a>
-=======
-              <a href="#" class="nav-link homepage">Homepage</a>
-            </li>
-            <li class="nav-item">
-              <a href="/login" class="nav-link">Login</a>
->>>>>>> 6e1008825c96207dbd962b172bb5c85a74362e79
             </li>
           {{/if}}
         </ul>
       </div>
     </nav>
+
     <main>
+       <div class="d-flex justify-content-center bg-dark rounded"><p class="text-center mb-3 text-white rounded bg-dark container row"><i>"Take A Hike" is a collection of journeys of backcountry hiking and exploring. Hikers keep their memories in photos and share feelings in words. From wading upstream to summiting volcanic peaks, we the hikers accept all kinds of challenges in the wilderness as we believe that it is not the mountain we conquer but ourselves."</i></p></div>
       {{{body}}}
     </main>
     <footer class="footer">
       The Hiking Project
     </footer>
-    {{!-- <footer class="footer rows pb-2">
+    <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
         <p>
           <a href="/">homepage</a>{{#if loggedIn}}
@@ -95,7 +90,7 @@
           {{/if}}
         </p>
       </div>
-    </footer> --}}
+    </footer>
 
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
@@ -116,7 +111,5 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"
     ></script>
-    <script src="/javascript/main.js"></script>
-    <script src="/javascript/logout.js"></script>
   </body>
 </html>

@@ -12,6 +12,11 @@ main {
   background-color: var(--trail);
 }
 
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--trail);
+}
+
 form {
   text-align: center;
   justify-content: center;
@@ -171,5 +176,3 @@ a:visited {
   justify-content: center;
   justify-items: center;
 }
-
-
