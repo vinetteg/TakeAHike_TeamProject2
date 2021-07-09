@@ -50,7 +50,7 @@ async function signupFormHandler(event) {
         }
         form.classList.add('was-validated');
         event.preventDefault();
-        signupFormHandler(event)
+        // signupFormHandler(event);
       }, false);
     });
   }, false);
