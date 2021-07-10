@@ -20,32 +20,34 @@ async function newFormHandler(event) {
 
     if (name && location && zipcode && date_been_there && season && difficulty) {
 
-    const response = await fetch(`/api/trail`, {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        location,
-        zipcode,
-        date_been_there,
-        category,
-        season,
-        difficulty
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }// return json file
-    });
-    console.log('fetching works')}
-
-    else {alert("missing information! please review your form!")}
-    console.log("next step works");
-
-
-    if (response.ok) {
-      document.location.reload();
+      const response = await fetch(`/api/trail`, {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          location,
+          zipcode,
+          date_been_there,
+          category,
+          season,
+          difficulty
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }// return json file
+      });
+      
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        document.location.reload();
+      }
+    
     } else {
-      document.location.reload();
-    }
+      alert("missing information! please review your form!")}
+      console.log("next step works");
+
+
+    
   }
 
 
