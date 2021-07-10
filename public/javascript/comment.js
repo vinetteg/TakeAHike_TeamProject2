@@ -19,7 +19,7 @@ async function commentFormHandler(event) {
           },
           order: [['id', 'DESC']],
         });
-          console.log(comment);
+          
         if (response.ok) {
           document.location.reload();
         } else {
